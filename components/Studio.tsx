@@ -77,18 +77,28 @@ export function Studio() {
         className="absolute inset-0"
         style={{ y: reduce ? 0 : bgY, scale: reduce ? 1.06 : bgScale }}
       >
-        {/*
-          TODO: Bild von Ivan einsetzen:
-          <img src="/studio-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover" />
-        */}
-        <div className="absolute inset-0 bg-[radial-gradient(110%_80%_at_50%_25%,rgba(188,200,87,0.12),transparent_60%),linear-gradient(180deg,#1d2017_0%,#131510_45%,#0b0c0e_100%)]" />
+        {/* Hintergrundbild: matt-schwarzer Urus im Studio (Oliv-Akzente) */}
+        <img
+          src="/studio-bg.jpg"
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
         <div className="hero-grain" />
       </motion.div>
 
-      {/* Vignette für Lesbarkeit, Bild bleibt mittig sichtbar */}
+      {/* Overlays für Lesbarkeit — Bild bleibt klar sichtbar */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_40%,transparent_40%,rgba(0,0,0,0.75)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_100%_at_50%_42%,transparent_38%,rgba(0,0,0,0.78)_100%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/55 via-transparent to-black/70"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[#0b0c0e]/25"
       />
 
       {/* ---- Zentriertes Statement ---- */}
