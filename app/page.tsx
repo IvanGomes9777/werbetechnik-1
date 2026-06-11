@@ -1,21 +1,21 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Studio } from '@/components/Studio';
+import { Finishes } from '@/components/Finishes';
 import { HeroStack } from '@/components/motion/HeroStack';
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      {/* Sticky-Stack-Übergang: Studio gleitet cinematisch über den Hero */}
+      {/* Zoom-Through-Übergang: Studio taucht cinematisch über dem Hero auf */}
       <HeroStack hero={<Hero />} over={<Studio />} />
+      <Finishes />
       {/*
         Section-für-Section-Aufbau. Freigegeben & gebaut:
-        ✓ Hero (Layout A · Lower-Third, Oliv, echtes Hero-Video)
-        ✓ Studio (Design H · Center-Statement, Urus-Bild, Parallax)
-        ✓ Übergang Hero → Studio (Sticky-Stack)
-        Nächste Sections nach Freigabe:
-        Finishes · Leistungen · Portfolio · Ablauf · Rezension · Kontakt · Footer
+        ✓ Hero · ✓ Studio · ✓ Übergang Hero→Studio (Zoom-Through)
+        ✓ Finishes (Layout B · Center-Stage, 7 Finishes inkl. Camouflage)
+        Nächste Sections: Leistungen · Portfolio · Ablauf · Rezension · Kontakt · Footer
       */}
     </>
   );

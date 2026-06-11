@@ -6,12 +6,58 @@
  */
 
 export const finishes = [
-  { icon: '🖤', name: 'Matt', desc: 'Understated und edel — nimmt Reflexen das Grelle.' },
-  { icon: '✨', name: 'Satin', desc: 'Seidiger, tiefer Glanz zwischen Matt und Hochglanz.' },
-  { icon: '🪞', name: 'Satin-Chrome / Gebürstetes Metall', desc: 'Premium und auffällig, fängt das Licht in feinen Linien.' },
-  { icon: '🌈', name: 'Color-Shift / Chamäleon', desc: 'Farbwechsel je nach Lichtwinkel — lebendig und einzigartig.' },
-  { icon: '🏁', name: 'Carbon-Optik', desc: 'Sportliche Akzente in feiner Carbon-Struktur.' },
-  { icon: '🎨', name: 'Custom-Design', desc: 'Individuell — vom Teildesign bis zum kompletten Unikat.' },
+  {
+    id: 'matt',
+    icon: '🖤',
+    name: 'Matt',
+    desc: 'Komplett glanzlos — schluckt Reflexe, wirkt edel und understated. Lässt Form und Linien des Fahrzeugs sprechen.',
+    surface: 'linear-gradient(150deg,#2b2b2b,#0e0e0e)',
+  },
+  {
+    id: 'satin',
+    icon: '✨',
+    name: 'Satin',
+    desc: 'Seidiger, weicher Tiefenglanz zwischen Matt und Hochglanz. Hochwertig und warm, ohne zu spiegeln.',
+    surface: 'linear-gradient(150deg,#4a4e57,#1c1e23 60%,#15161a)',
+  },
+  {
+    id: 'chrome',
+    icon: '🪞',
+    name: 'Satin-Chrome',
+    desc: 'Metallisch glänzend wie poliertes oder gebürstetes Metall — fängt das Licht in feinen Linien. Premium und auffällig.',
+    surface:
+      'repeating-linear-gradient(125deg,#8e9193 0 2px,#cfd2d4 2px 4px,#7c7f81 4px 7px)',
+  },
+  {
+    id: 'colorshift',
+    icon: '🌈',
+    name: 'Color-Shift',
+    desc: 'Farbwechsel je nach Lichtwinkel — aus jeder Perspektive ein anderer Ton. Lebendig, individuell und unverwechselbar.',
+    surface: 'linear-gradient(125deg,#00c2cc,#7a5cff 42%,#ff3fa0 78%,#00c2cc)',
+  },
+  {
+    id: 'carbon',
+    icon: '🏁',
+    name: 'Carbon-Optik',
+    desc: 'Feine Carbonfaser-Struktur — sportlicher Look, ideal für Akzente wie Dach, Spiegel oder Motorhaube.',
+    surface:
+      'repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px),linear-gradient(#181818,#0c0c0c)',
+  },
+  {
+    id: 'camouflage',
+    icon: '🪖',
+    name: 'Camouflage',
+    desc: 'Tarnmuster nach Wunsch — Army, Digital oder individuell. Markanter Auftritt mit Charakter.',
+    surface:
+      'radial-gradient(circle at 20% 30%,#2a3018 0 12%,transparent 13%),radial-gradient(circle at 62% 52%,#565f33 0 14%,transparent 15%),radial-gradient(circle at 82% 22%,#1c2010 0 11%,transparent 12%),radial-gradient(circle at 38% 76%,#6b733f 0 12%,transparent 13%),radial-gradient(circle at 88% 82%,#2a3018 0 15%,transparent 16%),linear-gradient(#3a4327,#2a3018)',
+  },
+  {
+    id: 'custom',
+    icon: '🎨',
+    name: 'Custom-Design',
+    desc: 'Individuell: Wunschfarben, Muster, Grafiken und Logos — alles ist möglich. Auch die Basis für Werbe- & Flottenfolierung.',
+    surface: 'linear-gradient(125deg,#ff6a00,#ff1fa0 32%,#7a5cff 64%,#00e5ff)',
+  },
 ];
 
 export const services = [
