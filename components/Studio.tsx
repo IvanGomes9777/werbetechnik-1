@@ -130,7 +130,7 @@ export function Studio() {
           variants={lineVariants}
           className="mt-6 max-w-xl text-[1.0625rem] font-light leading-relaxed text-[#c9c5ba]"
         >
-          Premium-Materialien von 3M, Avery Dennison, KPMF & Hexis —
+          Von der Fahrzeugfolierung bis zur Lichtwerbung — Premium-Materialien,
           verarbeitet mit Sorgfalt, Präzision und einem Auge fürs Detail.
         </motion.p>
       </motion.div>

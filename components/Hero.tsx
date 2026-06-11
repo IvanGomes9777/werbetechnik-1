@@ -124,8 +124,9 @@ export function Hero() {
               variants={item}
               className="mt-5 max-w-xl text-[1.0625rem] font-light leading-relaxed text-paper-dim"
             >
-              Premium-Folierung für anspruchsvolle Fahrzeuge — präzise
-              verarbeitet, werterhaltend, rückstandslos entfernbar.
+              Vom Carwrapping bis zur Lichtwerbung — Fahrzeugfolierung und
+              Werbetechnik aus Münster, präzise verarbeitet und mit Auge fürs
+              Detail.
             </motion.p>
             <motion.div
               variants={item}

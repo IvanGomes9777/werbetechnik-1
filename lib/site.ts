@@ -6,7 +6,7 @@
 
 export const site = {
   name: 'GV Werbetechnik',
-  tagline: 'Fahrzeugfolierung in Münster',
+  tagline: 'Fahrzeugfolierung & Werbetechnik · Münster',
   // BEISPIEL – ersetzen: E-Mail vom Kunden bestätigen lassen
   email: 'kontakt@gv-werbetechnik.de',
   phone: '0176 64978347',

@@ -14,8 +14,29 @@ const reveal: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 };
 
-/* Oliv-getönte Platzhalter-Szene. TODO: durch echtes Foto pro Leistung ersetzen. */
-function Scene({ active }: { active: boolean }) {
+/* Bild-/Platzhalter-Szene pro Leistung. Nutzt ein echtes Foto, wenn vorhanden. */
+function Scene({ active, img, alt }: { active: boolean; img?: string; alt?: string }) {
+  if (img) {
+    return (
+      <div aria-hidden="true" className="absolute inset-0">
+        <img
+          src={img}
+          alt={alt ?? ''}
+          className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ${
+            active ? 'scale-100 opacity-100' : 'scale-[1.06] opacity-55'
+          }`}
+        />
+        {/* Lesbarkeits-Overlay (stärker, wenn aufgeklappt) */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-500 ${
+            active
+              ? 'bg-gradient-to-t from-black/90 via-black/40 to-black/25'
+              : 'bg-black/55'
+          }`}
+        />
+      </div>
+    );
+  }
   return (
     <div
       aria-hidden="true"
@@ -49,7 +70,18 @@ export function Leistungen() {
       aria-label="Leistungen"
       className="relative overflow-hidden bg-noir py-[clamp(5rem,11vh,9rem)]"
     >
-      <div className="wrap">
+      {/* Section-Hintergrund: Oliv-Schein + feine Linien + Korn */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(90,99,5,0.16),transparent_60%)]"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 opacity-[0.04] bg-[repeating-linear-gradient(135deg,rgba(188,200,87,0.6)_0_1px,transparent_1px_24px)]"
+      />
+      <div aria-hidden="true" className="hero-grain absolute inset-0" />
+
+      <div className="relative wrap">
         <motion.p
           variants={reveal}
           initial="hidden"
@@ -92,7 +124,7 @@ export function Leistungen() {
                 onClick={() => setActive(i)}
                 className="group relative cursor-pointer overflow-hidden rounded-2xl border border-line"
               >
-                <Scene active={isActive} />
+                <Scene active={isActive} img={s.img} alt={s.name} />
 
                 {/* Eingeklappt: Icon oben + vertikaler Name */}
                 <div
@@ -114,10 +146,6 @@ export function Leistungen() {
                     isActive ? 'opacity-100 delay-150' : 'pointer-events-none opacity-0'
                   }`}
                 >
-                  <span className="absolute left-7 top-6 text-[0.62rem] uppercase tracking-[0.18em] text-[#9a967f]">
-                    {/* TODO: echtes Foto */}
-                    🖼 Beispiel · Foto folgt
-                  </span>
                   <div className="absolute inset-x-7 bottom-7">
                     <h3 className="flex items-center gap-3 font-playfair text-[clamp(1.6rem,2.5vw,2.4rem)] text-paper">
                       <span aria-hidden="true">{s.icon}</span>
@@ -179,10 +207,7 @@ export function Leistungen() {
                     >
                       <div className="px-5 pb-5">
                         <div className="relative h-40 overflow-hidden rounded-xl">
-                          <Scene active />
-                          <span className="absolute left-4 top-3 text-[0.6rem] uppercase tracking-[0.18em] text-[#9a967f]">
-                            🖼 Beispiel · Foto folgt
-                          </span>
+                          <Scene active img={s.img} alt={s.name} />
                         </div>
                         <p className="mt-4 text-[0.95rem] font-light leading-relaxed text-paper-dim">
                           {s.desc}

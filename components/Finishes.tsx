@@ -45,7 +45,21 @@ export function Finishes() {
       aria-label="Finishes — Folien-Oberflächen"
       className="relative overflow-hidden bg-noir py-[clamp(5rem,11vh,9rem)]"
     >
-      <div className="wrap text-center">
+      {/* Hintergrund reagiert auf das gewählte Finish */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 -top-20 h-[40rem] w-[40rem] rounded-full blur-[130px]"
+        animate={{ backgroundColor: cur.accent, opacity: 0.16 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      />
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-32 -right-40 h-[36rem] w-[36rem] rounded-full blur-[130px]"
+        animate={{ backgroundColor: cur.accent, opacity: 0.12 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+      />
+
+      <div className="relative wrap text-center">
         <motion.p
           variants={reveal}
           initial="hidden"
@@ -64,6 +78,15 @@ export function Finishes() {
         >
           Wähle dein Finish.
         </motion.h2>
+        <motion.p
+          variants={reveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          className="mx-auto mt-4 max-w-md text-[0.98rem] font-light text-paper-dim"
+        >
+          Für dein Carwrapping — ob Vollfolierung oder einzelne Akzente.
+        </motion.p>
 
         {/* ---- Finish-Fläche (morpht per Crossfade) ---- */}
         <motion.div
