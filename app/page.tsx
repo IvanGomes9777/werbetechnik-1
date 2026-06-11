@@ -9,12 +9,16 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      {/* Einheitliche Zoom-Through-Übergänge: jede Section wird gepinnt,
-          die nächste schiebt sich cinematisch darüber. */}
-      <CoverPin z={0}>
+      {/* Hero → Studio: Wipe (Studio gleitet mit Tiefe über den gepinnten Hero,
+          Hero skaliert zurück + dunkelt ab — wie ursprünglich).
+          Ab Studio: Zoom-Through-Übergänge wie gehabt. */}
+      <CoverPin z={0} variant="wipe">
         <Hero />
       </CoverPin>
-      <CoverPin z={10}>
+      <CoverPin
+        z={10}
+        className="shadow-[0_-40px_80px_-20px_rgba(0,0,0,0.9)]"
+      >
         <Studio />
       </CoverPin>
       <CoverPin z={20}>
