@@ -12,6 +12,7 @@ import {
 } from 'next/font/google';
 import './globals.css';
 import { CookieBanner } from '@/components/CookieBanner';
+import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { site } from '@/lib/site';
 
 const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton', display: 'swap' });
@@ -125,6 +126,7 @@ export default function RootLayout({
         >
           Zum Inhalt springen
         </a>
+        <SmoothScroll />
         <main id="main">{children}</main>
         <CookieBanner />
         <LocalBusinessJsonLd />
