@@ -1,12 +1,10 @@
 'use client';
 
-import { useRef } from 'react';
 import {
   motion,
-  useScroll,
-  useTransform,
   useMotionValue,
   useSpring,
+  useTransform,
   useReducedMotion,
   type Variants,
 } from 'framer-motion';
@@ -28,23 +26,12 @@ const item: Variants = {
 
 /**
  * HERO — Layout A (Lower-Third), cinematic + Premium-Motion.
- * Vollbild-Hero-Video (object-cover) als Hintergrund, klar sichtbar.
- * - Scroll-Parallax + sanfter Maus-3D-Tilt am Video (Overscale verhindert Ränder)
- * - Gestaffelter Entrance der Headline/CTAs
- * - Studio-Szene (CSS) liegt als Fallback hinter dem Video.
+ * Vollbild-Hero-Video (object-cover), Maus-3D-Tilt, gestaffelter Entrance.
+ * Der Scroll-Übergang zur nächsten Section wird von <HeroStack> gesteuert
+ * (Sticky-Stack: Studio gleitet mit Tiefe über den Hero).
  */
 export function Hero() {
   const reduce = useReducedMotion();
-  const sectionRef = useRef<HTMLElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start start', 'end start'],
-  });
-  const sceneY = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
-  const sceneScale = useTransform(scrollYProgress, [0, 1], [1.08, 1.2]);
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
   // Maus-3D-Tilt (dezent; Overscale hält die Videoränder verdeckt)
   const mx = useMotionValue(0);
@@ -64,23 +51,20 @@ export function Hero() {
   return (
     <section
       id="top"
-      ref={sectionRef}
       onMouseMove={onMouse}
       aria-label="Einleitung"
-      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden bg-noir"
+      className="relative flex h-[100svh] flex-col justify-end overflow-hidden bg-noir"
     >
-      {/* ---- Vollbild-Hero-Video (parallax + 3D-tilt) ---- */}
+      {/* ---- Vollbild-Hero-Video (3D-tilt) ---- */}
       <motion.div
         className="absolute inset-0"
         style={{
-          y: reduce ? 0 : sceneY,
-          scale: reduce ? 1.06 : sceneScale,
+          scale: 1.06,
           rotateX: reduce ? 0 : rotX,
           rotateY: reduce ? 0 : rotY,
           transformPerspective: 1200,
         }}
       >
-        {/* Fallback-Szene hinter dem Video (deckt Ladezeit / Fehlerfall ab) */}
         <div className="hero-scene" aria-hidden="true">
           <div className="hero-spot" />
           <div className="hero-haze" />
@@ -100,11 +84,10 @@ export function Hero() {
           <source src="/hero.mp4" type="video/mp4" />
         </video>
 
-        {/* Leichtes Korn für cinematischen Look */}
         <div className="hero-grain" aria-hidden="true" />
       </motion.div>
 
-      {/* Lokale Scrims: oben Navbar, unten Text-Lesbarkeit */}
+      {/* Lokale Scrims */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/55 to-transparent"
@@ -114,11 +97,8 @@ export function Hero() {
         className="pointer-events-none absolute inset-x-0 bottom-0 h-[52%] bg-gradient-to-t from-black/85 via-black/45 to-transparent"
       />
 
-      {/* ---- Lower-Third Content (stagger entrance + scroll fade) ---- */}
-      <motion.div
-        className="wrap relative z-10 pb-16 sm:pb-20"
-        style={{ y: reduce ? 0 : contentY, opacity: reduce ? 1 : contentOpacity }}
-      >
+      {/* ---- Lower-Third Content ---- */}
+      <div className="wrap relative z-10 pb-16 sm:pb-20">
         <motion.div
           variants={container}
           initial="hidden"
@@ -176,7 +156,7 @@ export function Hero() {
             Google · Münster
           </motion.p>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll-Cue */}
       {!reduce ? (
