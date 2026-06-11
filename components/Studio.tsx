@@ -69,7 +69,7 @@ export function Studio() {
       id="studio"
       ref={ref}
       aria-label="Studio — über GV Werbetechnik"
-      className="relative flex min-h-[92svh] flex-col items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden"
     >
       {/* ---- Hintergrundbild (Parallax) ---- */}
       <motion.div

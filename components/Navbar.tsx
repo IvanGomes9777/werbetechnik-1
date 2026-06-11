@@ -35,6 +35,7 @@ export function Navbar() {
   }, []);
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
         scrolled || open
@@ -93,11 +94,12 @@ export function Navbar() {
           <span className={`h-px w-6 bg-[var(--olive-bright)] transition-transform duration-300 ${open ? '-translate-y-[6px] -rotate-45' : ''}`} />
         </button>
       </nav>
+    </header>
 
       <div
         id="mobile-menu"
         hidden={!open}
-        className={`fixed inset-0 z-40 flex flex-col bg-[var(--noir)] transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[45] flex flex-col bg-noir transition-opacity duration-300 lg:hidden ${
           open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
@@ -121,6 +123,6 @@ export function Navbar() {
           </a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

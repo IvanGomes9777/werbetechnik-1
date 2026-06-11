@@ -57,7 +57,7 @@ export function Hero() {
       id="top"
       onMouseMove={onMouse}
       aria-label="Einleitung"
-      className="relative flex h-[100svh] flex-col justify-end overflow-hidden bg-noir"
+      className="relative flex h-[100dvh] flex-col justify-end overflow-hidden bg-noir"
     >
       {/* ---- Vollbild-Hero-Video (3D-tilt) ---- */}
       <motion.div

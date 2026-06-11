@@ -43,7 +43,7 @@ export function HeroStack({ hero, over }: { hero: ReactNode; over: ReactNode }) 
 
   return (
     <div ref={ref} className="relative">
-      <div className="sticky top-0 z-0 h-[100svh] overflow-hidden">
+      <div className="sticky top-0 z-0 h-[100dvh] overflow-hidden">
         <motion.div
           style={{ scale: heroScale, opacity: heroOpacity, filter: heroFilter }}
           className="h-full w-full origin-center will-change-transform"
@@ -52,13 +52,16 @@ export function HeroStack({ hero, over }: { hero: ReactNode; over: ReactNode }) 
         </motion.div>
       </div>
 
-      {/* Taucht aus der Tiefe auf und gleitet über den Hero */}
-      <motion.div
-        style={{ scale: overScale, opacity: overOpacity }}
-        className="relative z-10 origin-center will-change-transform"
-      >
-        {over}
-      </motion.div>
+      {/* Taucht aus der Tiefe auf und gleitet über den Hero.
+          overflow-hidden klippt das Skalieren (kein horizontales Überlaufen). */}
+      <div className="relative z-10 overflow-hidden">
+        <motion.div
+          style={{ scale: overScale, opacity: overOpacity }}
+          className="origin-center will-change-transform"
+        >
+          {over}
+        </motion.div>
+      </div>
     </div>
   );
 }
