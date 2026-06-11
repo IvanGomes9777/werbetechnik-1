@@ -69,6 +69,49 @@ export const services = [
   { icon: '📣', name: 'Werbebeschriftung & Flotten', desc: 'Gewerbliche Fahrzeugwerbung — Einzelfahrzeug bis Flotte.', price: 'Angebot', dauer: '' },
 ];
 
+/**
+ * Leistungen von GV Werbetechnik (echt).
+ * TODO: pro Leistung ein echtes Foto ergänzen (img-Feld), siehe Leistungen.tsx.
+ */
+export const leistungen = [
+  {
+    id: 'carwrapping',
+    icon: '🚗',
+    name: 'Carwrapping',
+    desc: 'Individuelle Folierung für einen einzigartigen Look.',
+  },
+  {
+    id: 'lackschutz',
+    icon: '🛡️',
+    name: 'Lackschutz',
+    desc: 'Unsichtbarer Schutz, der deinen Originallack bewahrt.',
+  },
+  {
+    id: 'kfz-folierung',
+    icon: '📣',
+    name: 'KFZ-Folierung',
+    desc: 'Mach dein Fahrzeug zur rollenden Werbefläche und gewinne Aufmerksamkeit unterwegs.',
+  },
+  {
+    id: 'lichtwerbung',
+    icon: '💡',
+    name: 'Lichtwerbung',
+    desc: 'Beleuchtete Schriftzüge, die deinen Betrieb auch im Dunkeln eindrucksvoll in Szene setzen.',
+  },
+  {
+    id: 'schilder',
+    icon: '🪧',
+    name: 'Schilder',
+    desc: 'Stabile Schilder für Eingang, Gelände und Wegeleitung.',
+  },
+  {
+    id: 'objektbeschriftung',
+    icon: '🏢',
+    name: 'Objektbeschriftung',
+    desc: 'Beschriftung für Gebäude, Fassaden, Fenster und Flächen.',
+  },
+];
+
 export const steps = [
   { no: '01', title: 'Anfrage & Wunsch', desc: 'Formular mit Finish-Wunsch — gern mit Fotos deines Fahrzeugs.' },
   { no: '02', title: 'Beratung & Angebot', desc: 'Wir besprechen Material, Finish und Preis.' },
