@@ -134,7 +134,7 @@ export function Hero() {
               variants={item}
               className="mt-5 font-playfair text-[clamp(2.6rem,6.2vw,5rem)] font-medium leading-[1.02] text-paper [text-shadow:0_2px_30px_rgba(0,0,0,0.55)]"
             >
-              Vollendung in jedem Detail.
+              Werbetechnik mit Anspruch
             </motion.h1>
             <motion.p
               variants={item}
