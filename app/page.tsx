@@ -3,27 +3,29 @@ import { Hero } from '@/components/Hero';
 import { Studio } from '@/components/Studio';
 import { Finishes } from '@/components/Finishes';
 import { Leistungen } from '@/components/Leistungen';
-import { HeroStack } from '@/components/motion/HeroStack';
-import { RiseIn } from '@/components/motion/RiseIn';
+import { CoverPin } from '@/components/motion/CoverPin';
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      {/* Zoom-Through-Übergang: Studio taucht cinematisch über dem Hero auf */}
-      <HeroStack hero={<Hero />} over={<Studio />} />
-      {/* Übergang Studio → Finishes (markant) */}
-      <RiseIn intensity="strong">
+      {/* Einheitliche Zoom-Through-Übergänge: jede Section wird gepinnt,
+          die nächste schiebt sich cinematisch darüber. */}
+      <CoverPin z={0}>
+        <Hero />
+      </CoverPin>
+      <CoverPin z={10}>
+        <Studio />
+      </CoverPin>
+      <CoverPin z={20}>
         <Finishes />
-      </RiseIn>
-      {/* Übergang Finishes → Leistungen (dezent) */}
-      <RiseIn intensity="soft">
+      </CoverPin>
+      <div className="relative z-30">
         <Leistungen />
-      </RiseIn>
+      </div>
       {/*
-        Section-für-Section-Aufbau. Freigegeben & gebaut:
-        ✓ Hero · ✓ Studio · ✓ Übergang Hero→Studio (Zoom-Through)
-        ✓ Finishes (Layout B) · ✓ Leistungen (Design G · Expanding Panels)
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Finishes · ✓ Leistungen
+        Übergänge: Zoom-Through-Stack zwischen allen Sections
         Nächste Sections: Portfolio · Ablauf · Rezension · Kontakt · Footer
       */}
     </>

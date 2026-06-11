@@ -45,18 +45,31 @@ export function Finishes() {
       aria-label="Finishes — Folien-Oberflächen"
       className="relative overflow-hidden bg-noir py-[clamp(5rem,11vh,9rem)]"
     >
-      {/* Hintergrund reagiert auf das gewählte Finish */}
+      {/* Hintergrund reagiert kräftig auf das gewählte Finish */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-40 -top-20 h-[40rem] w-[40rem] rounded-full blur-[130px]"
-        animate={{ backgroundColor: cur.accent, opacity: 0.16 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="pointer-events-none absolute -left-48 -top-32 h-[52rem] w-[52rem] rounded-full blur-[110px]"
+        animate={{ backgroundColor: cur.accent, opacity: 0.42 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       />
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-32 -right-40 h-[36rem] w-[36rem] rounded-full blur-[130px]"
-        animate={{ backgroundColor: cur.accent, opacity: 0.12 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="pointer-events-none absolute -bottom-40 -right-48 h-[48rem] w-[48rem] rounded-full blur-[110px]"
+        animate={{ backgroundColor: cur.accent, opacity: 0.34 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
+      />
+      {/* Zentrale Farbwäsche hinter der Bühne */}
+      <motion.div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          WebkitMaskImage:
+            'radial-gradient(85% 70% at 50% 45%, black, transparent 75%)',
+          maskImage:
+            'radial-gradient(85% 70% at 50% 45%, black, transparent 75%)',
+        }}
+        animate={{ backgroundColor: cur.accent, opacity: 0.2 }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       />
 
       <div className="relative wrap text-center">
