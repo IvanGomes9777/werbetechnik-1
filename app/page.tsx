@@ -22,13 +22,13 @@ export default function Home() {
         <Studio />
       </CoverPin>
       <CoverPin z={20}>
-        <Showcase />
+        <Leistungen />
       </CoverPin>
       <div className="relative z-30">
-        <Leistungen />
+        <Showcase />
       </div>
       {/*
-        Gebaut: ✓ Hero · ✓ Studio · ✓ Ergebnisse (Vorher/Nachher) · ✓ Leistungen
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse (Vorher/Nachher)
         Übergänge: Zoom-Through-Stack zwischen allen Sections
         Nächste Sections: Portfolio · Ablauf · Rezension · Kontakt · Footer
       */}

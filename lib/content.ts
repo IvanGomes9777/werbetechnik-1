@@ -18,7 +18,6 @@
 export const showcaseScenes = [
   {
     id: 'fahrzeug',
-    icon: '🚗',
     label: 'Fahrzeug',
     caption: 'Vollfolierung · Satin-Schwarz',
     accent: '#9aa6b5',
@@ -27,7 +26,6 @@ export const showcaseScenes = [
   },
   {
     id: 'lichtwerbung',
-    icon: '💡',
     label: 'Lichtwerbung',
     caption: 'Leuchtschrift · Ladenfront',
     accent: '#cdd56e',
@@ -36,7 +34,6 @@ export const showcaseScenes = [
   },
   {
     id: 'objekt',
-    icon: '🏢',
     label: 'Objektbeschriftung',
     caption: 'Schaufenster · Folienschrift',
     accent: '#9fb0c4',
@@ -45,7 +42,6 @@ export const showcaseScenes = [
   },
   {
     id: 'schild',
-    icon: '🪧',
     label: 'Schilder & Werbung',
     caption: 'Firmenschild · Eingang',
     accent: '#bcc857',
@@ -67,18 +63,18 @@ export const trustStats = [
 ] as const;
 
 export const trustChips = [
-  { icon: '🎯', text: 'Premium-Gussfolien' },
-  { icon: '📍', text: 'Studio in Münster' },
-  { icon: '🧼', text: 'Rückstandsfrei entfernbar' },
+  { text: 'Premium-Gussfolien' },
+  { text: 'Studio in Münster' },
+  { text: 'Rückstandsfrei entfernbar' },
 ] as const;
 
 export const services = [
-  { icon: '🚗', name: 'Vollfolierung (Farbwechsel)', desc: 'Komplette Designfolierung — neue Farbe, voller Werterhalt.', price: 'ab 1.990 €', dauer: '2–4 Tage' },
-  { icon: '🎯', name: 'Teilfolierung & Akzente', desc: 'Dach, Spiegel, Motorhaube — gezielte Akzente.', price: 'ab 290 €', dauer: '' },
-  { icon: '🛡️', name: 'Lackschutzfolie (PPF)', desc: 'Unsichtbarer Steinschlagschutz für den Originallack.', price: 'ab 890 €', dauer: '' },
-  { icon: '🌑', name: 'Scheibentönung', desc: 'Nur zugelassene ABE-Folien, hintere Scheiben & Heck.', price: 'ab 149 €', dauer: '' },
-  { icon: '✂️', name: 'Chrome-Delete', desc: 'Zierleisten in Schwarz oder Satin — cleaner Look.', price: 'ab 240 €', dauer: '' },
-  { icon: '📣', name: 'Werbebeschriftung & Flotten', desc: 'Gewerbliche Fahrzeugwerbung — Einzelfahrzeug bis Flotte.', price: 'Angebot', dauer: '' },
+  { name: 'Vollfolierung (Farbwechsel)', desc: 'Komplette Designfolierung — neue Farbe, voller Werterhalt.', price: 'ab 1.990 €', dauer: '2–4 Tage' },
+  { name: 'Teilfolierung & Akzente', desc: 'Dach, Spiegel, Motorhaube — gezielte Akzente.', price: 'ab 290 €', dauer: '' },
+  { name: 'Lackschutzfolie (PPF)', desc: 'Unsichtbarer Steinschlagschutz für den Originallack.', price: 'ab 890 €', dauer: '' },
+  { name: 'Scheibentönung', desc: 'Nur zugelassene ABE-Folien, hintere Scheiben & Heck.', price: 'ab 149 €', dauer: '' },
+  { name: 'Chrome-Delete', desc: 'Zierleisten in Schwarz oder Satin — cleaner Look.', price: 'ab 240 €', dauer: '' },
+  { name: 'Werbebeschriftung & Flotten', desc: 'Gewerbliche Fahrzeugwerbung — Einzelfahrzeug bis Flotte.', price: 'Angebot', dauer: '' },
 ];
 
 /**
@@ -88,49 +84,42 @@ export const services = [
  */
 export const leistungen: {
   id: string;
-  icon: string;
   name: string;
   desc: string;
   img?: string;
 }[] = [
   {
     id: 'carwrapping',
-    icon: '🚗',
     name: 'Carwrapping',
     desc: 'Individuelle Folierung für einen einzigartigen Look.',
     img: '/leistungen/carwrapping.jpg',
   },
   {
     id: 'lackschutz',
-    icon: '🛡️',
     name: 'Lackschutz',
     desc: 'Unsichtbarer Schutz, der deinen Originallack bewahrt.',
     img: '/leistungen/lackschutz.jpg',
   },
   {
     id: 'kfz-folierung',
-    icon: '📣',
     name: 'KFZ-Folierung',
     desc: 'Mach dein Fahrzeug zur rollenden Werbefläche und gewinne Aufmerksamkeit unterwegs.',
     img: '/leistungen/kfz-folierung.jpg',
   },
   {
     id: 'lichtwerbung',
-    icon: '💡',
     name: 'Lichtwerbung',
     desc: 'Beleuchtete Schriftzüge, die deinen Betrieb auch im Dunkeln eindrucksvoll in Szene setzen.',
     img: '/leistungen/lichtwerbung.jpg',
   },
   {
     id: 'schilder',
-    icon: '🪧',
     name: 'Schilder',
     desc: 'Stabile Schilder für Eingang, Gelände und Wegeleitung.',
     img: '/leistungen/schilder.jpg',
   },
   {
     id: 'objektbeschriftung',
-    icon: '🏢',
     name: 'Objektbeschriftung',
     desc: 'Beschriftung für Gebäude, Fassaden, Fenster und Flächen.',
     img: '/leistungen/objektbeschriftung.jpg',

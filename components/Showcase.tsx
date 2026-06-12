@@ -201,9 +201,6 @@ export function Showcase() {
           {/* Caption (Szenen-Titel) */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-start gap-0.5 bg-gradient-to-t from-black/80 to-transparent px-5 pb-5 pt-12 text-left sm:px-7">
             <span className="font-playfair text-[clamp(1.2rem,2.4vw,1.8rem)] text-paper">
-              <span aria-hidden="true" className="mr-2">
-                {cur.icon}
-              </span>
               {cur.label}
             </span>
             <span className="text-[0.85rem] font-light text-paper-dim">
@@ -251,13 +248,12 @@ export function Showcase() {
                 role="tab"
                 aria-selected={isActive}
                 onClick={() => setActive(i)}
-                className={`flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm tracking-wide transition-colors ${
+                className={`rounded-full border px-4 py-2.5 text-sm tracking-wide transition-colors ${
                   isActive
                     ? 'border-olive bg-olive text-[#f2f0e6]'
                     : 'border-line text-paper-dim hover:border-olive-bright hover:text-paper'
                 }`}
               >
-                <span aria-hidden="true">{s.icon}</span>
                 {s.label}
               </button>
             );
@@ -290,9 +286,8 @@ export function Showcase() {
             {trustChips.map((c) => (
               <li
                 key={c.text}
-                className="flex items-center gap-2 text-sm font-light text-paper-dim"
+                className="text-sm font-light text-paper-dim"
               >
-                <span aria-hidden="true">{c.icon}</span>
                 {c.text}
               </li>
             ))}
