@@ -62,7 +62,7 @@ export function Rezension() {
     <section
       id="rezension"
       aria-label="Bewertungen"
-      className="relative overflow-hidden bg-noir py-[clamp(5rem,12vh,9rem)]"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-noir py-20"
     >
       <div
         aria-hidden="true"
@@ -70,7 +70,7 @@ export function Rezension() {
       />
       <div aria-hidden="true" className="hero-grain absolute inset-0" />
 
-      <div className="relative mx-auto max-w-xl px-[clamp(1.25rem,5vw,3.5rem)] text-center">
+      <div className="relative mx-auto w-full max-w-xl px-[clamp(1.25rem,5vw,3.5rem)] text-center">
         <motion.p
           variants={reveal}
           initial="hidden"

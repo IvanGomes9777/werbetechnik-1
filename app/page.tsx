@@ -29,14 +29,17 @@ export default function Home() {
       <CoverPin z={30}>
         <Showcase />
       </CoverPin>
-      {/* Ab hier normaler Fluss (über dem gepinnten Zoom-Through-Stack). */}
-      <div className="relative z-40">
+      <CoverPin z={40}>
         <Portfolio />
+      </CoverPin>
+      {/* Bewertung: bildschirmfüllende Abschluss-Sektion, die per Zoom-Through
+          über das gepinnte Portfolio gleitet. */}
+      <div className="relative z-50">
         <Rezension />
       </div>
       {/*
         Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Bewertung
-        Übergänge: Zoom-Through-Stack bis Ergebnisse; danach normaler Fluss.
+        Übergänge: Zoom-Through-Stack zwischen allen Sections.
         Nächste Sections: Kontakt · Footer  (Ablauf bewusst weggelassen)
       */}
     </>
