@@ -55,6 +55,8 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#9fb0c4',
     surface:
       'linear-gradient(125deg, rgba(255,255,255,0.10) 0 2px, transparent 2px 9px), radial-gradient(90% 70% at 30% 20%, rgba(159,176,196,0.22), transparent 60%), linear-gradient(160deg,#1b1f24,#0c0e10)',
+    beforeImg: '/showcase/objekt-vorher.webp',
+    afterImg: '/showcase/objekt-nachher.webp',
   },
   {
     id: 'schild',

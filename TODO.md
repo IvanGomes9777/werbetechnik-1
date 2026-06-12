@@ -24,7 +24,9 @@ eingepflegt (`lib/site.ts`).
       - **Lichtwerbung** = echtes Vorher-Foto + **KI-generiertes Nachher**
         (`lichtwerbung-nachher.webp`, beleuchtete „GV WERBETECHNIK"-Fassade).
         Bei Bedarf durch echtes Referenzprojekt ersetzen.
-      - Noch offen: Objektbeschriftung, Schilder (CSS-Platzhalter).
+      - **Objektbeschriftung** = KI-generiertes Paar (`objekt-{vorher,nachher}.webp`,
+        leeres Schaufenster → mit „GV WERBETECHNIK"-Folienbeschriftung).
+      - Noch offen: Schilder (CSS-Platzhalter).
       - DSGVO: sichtbare Kennzeichen (GT3 RS) ggf. unkenntlich machen.
 - [ ] **Zahlen bestätigen** (Section „Ergebnisse", `trustStats` in
       `lib/content.ts`) — `Jahre Erfahrung` und `Projekte umgesetzt` sind
