@@ -45,6 +45,8 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#cdd56e',
     surface:
       'radial-gradient(60% 45% at 50% 42%, rgba(205,213,110,0.55), rgba(90,99,5,0.12) 60%, transparent 72%), linear-gradient(180deg,#15170f,#0b0c08)',
+    beforeImg: '/showcase/lichtwerbung-vorher.webp',
+    afterImg: '/showcase/lichtwerbung-nachher.webp',
   },
   {
     id: 'objekt',
