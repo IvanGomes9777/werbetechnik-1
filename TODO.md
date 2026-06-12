@@ -34,6 +34,9 @@ eingepflegt (`lib/site.ts`).
 - [ ] **Zahlen bestätigen** (Section „Ergebnisse", `trustStats` in
       `lib/content.ts`) — `Jahre Erfahrung` und `Projekte umgesetzt` sind
       BEISPIEL-Platzhalter (`confirm: true`). 5,0★ Google ist verifiziert.
+- [ ] **Portfolio** (Cinematic Filmstrip, `components/Portfolio.tsx`) — aktuell
+      rechtssichere CSS-Platzhalter-Kacheln (`portfolio` in `lib/content.ts`).
+      Durch echte GV-Projektfotos ersetzen.
 - [ ] **Portfolio-Fotos** durch echte GV-Aufnahmen ersetzen —
       `components/Portfolio.tsx`. Aktuell rechtssichere CSS-Platzhalter (16:10).
   - [ ] Optional: Referenz-/Deep-Search-Fotos nur mit Nutzungsrecht live nehmen.

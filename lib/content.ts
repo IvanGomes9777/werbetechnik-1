@@ -82,6 +82,69 @@ export const trustStats = [
   { value: '500', suffix: '+', label: 'Projekte umgesetzt', confirm: true },
 ] as const;
 
+/**
+ * Portfolio (Cinematic Filmstrip) — aktuell rechtssichere CSS-Platzhalter
+ * (keine echten Fotos). `surface` ist der Platzhalter-Look pro Projekt.
+ * TODO: durch echte GV-Projektfotos ersetzen (DSGVO: Kennzeichen unkenntlich) —
+ * siehe TODO.md.
+ */
+export const portfolio = [
+  {
+    id: 'satin-schwarz',
+    category: 'Fahrzeug',
+    title: 'Satin-Schwarz Vollfolierung',
+    surface: 'linear-gradient(150deg,#2f2f2f,#0d0d0d)',
+  },
+  {
+    id: 'color-shift',
+    category: 'Fahrzeug',
+    title: 'Color-Shift Sportwagen',
+    surface: 'linear-gradient(125deg,#00c2cc,#7a5cff 42%,#ff3fa0 78%,#00c2cc)',
+  },
+  {
+    id: 'leuchtschrift',
+    category: 'Lichtwerbung',
+    title: 'Leuchtschrift Ladenfront',
+    surface:
+      'radial-gradient(60% 45% at 50% 40%, rgba(205,213,110,0.55), rgba(90,99,5,0.12) 60%, transparent 72%), linear-gradient(180deg,#15170f,#0b0c08)',
+  },
+  {
+    id: 'schaufenster',
+    category: 'Objektbeschriftung',
+    title: 'Schaufenster-Beschriftung',
+    surface:
+      'linear-gradient(125deg, rgba(255,255,255,0.10) 0 2px, transparent 2px 9px), radial-gradient(90% 70% at 30% 20%, rgba(159,176,196,0.22), transparent 60%), linear-gradient(160deg,#1b1f24,#0c0e10)',
+  },
+  {
+    id: 'firmenschild',
+    category: 'Schilder',
+    title: 'Firmenschild Eingang',
+    surface:
+      'radial-gradient(100% 80% at 50% 30%, rgba(188,200,87,0.22), transparent 58%), linear-gradient(155deg,#22251a,#101209)',
+  },
+  {
+    id: 'carbon',
+    category: 'Fahrzeug',
+    title: 'Carbon-Akzente',
+    surface:
+      'repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px),linear-gradient(#181818,#0c0c0c)',
+  },
+  {
+    id: 'flotte',
+    category: 'Werbung',
+    title: 'Flottenbeschriftung',
+    surface:
+      'radial-gradient(80% 60% at 70% 20%, rgba(90,99,5,0.3), transparent 60%), linear-gradient(150deg,#1a1d12,#0c0d08)',
+  },
+  {
+    id: 'camouflage',
+    category: 'Fahrzeug',
+    title: 'Camouflage-Folierung',
+    surface:
+      'radial-gradient(circle at 20% 30%,#2a3018 0 12%,transparent 13%),radial-gradient(circle at 62% 52%,#565f33 0 14%,transparent 15%),radial-gradient(circle at 82% 22%,#1c2010 0 11%,transparent 12%),radial-gradient(circle at 38% 76%,#6b733f 0 12%,transparent 13%),linear-gradient(#3a4327,#2a3018)',
+  },
+] as const;
+
 export const trustChips = [
   { text: 'Premium-Gussfolien' },
   { text: 'Studio in Münster' },

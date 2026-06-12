@@ -3,6 +3,7 @@ import { Hero } from '@/components/Hero';
 import { Studio } from '@/components/Studio';
 import { Showcase } from '@/components/Showcase';
 import { Leistungen } from '@/components/Leistungen';
+import { Portfolio } from '@/components/Portfolio';
 import { CoverPin } from '@/components/motion/CoverPin';
 
 export default function Home() {
@@ -24,13 +25,16 @@ export default function Home() {
       <CoverPin z={20}>
         <Leistungen />
       </CoverPin>
-      <div className="relative z-30">
+      <CoverPin z={30}>
         <Showcase />
+      </CoverPin>
+      <div className="relative z-40">
+        <Portfolio />
       </div>
       {/*
-        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse (Vorher/Nachher)
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio
         Übergänge: Zoom-Through-Stack zwischen allen Sections
-        Nächste Sections: Portfolio · Ablauf · Rezension · Kontakt · Footer
+        Nächste Sections: Ablauf · Rezension · Kontakt · Footer
       */}
     </>
   );
