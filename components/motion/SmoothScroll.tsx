@@ -46,16 +46,17 @@ export function SmoothScroll() {
     };
     document.addEventListener('click', onClick);
 
-    // Section-Snapping NUR am Handy/Tablet (< lg). Sanftes „proximity"-Einrasten:
-    // die Seite rastet am Anfang jeder Sektion ein, wenn man in deren Nähe
-    // loslässt — blockiert aber nichts (lange Inhalte bleiben frei scrollbar).
+    // Section-Snapping NUR am Handy/Tablet (< lg). Festes „mandatory"-Einrasten:
+    // die Seite bleibt an JEDER Sektion verbindlich stehen — man kann nicht in
+    // einer Übergangsphase ruhen, jeder Scroll-Stopp landet sauber auf einer
+    // Sektion. Ein normaler Wisch trägt zur nächsten Sektion weiter.
     // Snap-Punkte = Anfang jeder Sektion: die CoverPin-Container (Hero, Studio,
     // Finishes — dort, wo die Sektion fertig gepinnt ist) plus die normalen
     // Inhaltssektionen (#leistungen …). ignoreSticky/ignoreTransform, damit der
     // Sticky-/Skalier-Aufbau der CoverPins die berechnete Position nicht verzerrt.
     let snap: Snap | undefined;
     if (window.matchMedia('(max-width: 1023px)').matches) {
-      snap = new Snap(lenis, { type: 'proximity' });
+      snap = new Snap(lenis, { type: 'mandatory' });
       const targets = new Set<HTMLElement>(
         Array.from(document.querySelectorAll<HTMLElement>('[data-coverpin]')),
       );
