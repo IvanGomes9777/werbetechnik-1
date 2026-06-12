@@ -11,7 +11,12 @@ import {
   Roboto_Condensed,
 } from 'next/font/google';
 import './globals.css';
-import { CookieBanner } from '@/components/CookieBanner';
+// Cookie-Banner vorerst deaktiviert: aktuell werden keine externen Dienste
+// (Google Maps, Instagram, Statistik) geladen, die eine Einwilligung
+// erfordern — der Banner hatte daher keine Funktion und verdeckte am Handy
+// nur Inhalt. Komponente bleibt erhalten: <CookieBanner /> unten wieder
+// einbinden, sobald solche Dienste tatsächlich eingebunden werden.
+// import { CookieBanner } from '@/components/CookieBanner';
 import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { site } from '@/lib/site';
 
@@ -128,7 +133,7 @@ export default function RootLayout({
         </a>
         <SmoothScroll />
         <main id="main">{children}</main>
-        <CookieBanner />
+        {/* <CookieBanner /> — deaktiviert, siehe Hinweis am Import oben */}
         <LocalBusinessJsonLd />
       </body>
     </html>
