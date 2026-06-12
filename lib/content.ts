@@ -35,8 +35,8 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#9aa6b5',
     surface:
       'radial-gradient(120% 80% at 72% 8%, rgba(188,200,87,0.18), transparent 55%), linear-gradient(150deg,#33373f,#181a1f 58%,#0d0e11)',
-    beforeImg: '/showcase/fahrzeug-vorher.webp',
-    afterImg: '/showcase/fahrzeug-nachher.webp',
+    beforeImg: '/showcase/gt3rs-vorher.webp',
+    afterImg: '/showcase/gt3rs-nachher.webp',
   },
   {
     id: 'lichtwerbung',
