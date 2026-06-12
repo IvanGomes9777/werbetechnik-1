@@ -97,9 +97,9 @@ function CountUp({ value, suffix }: { value: string; suffix?: string }) {
 export function Showcase() {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
-  // Reglerposition in %: 100 = komplett „vorher" (Basisbild voll sichtbar),
-  // nach links ziehen blendet das „nachher"-Bild von rechts ein.
-  const [pos, setPos] = useState(100);
+  // Reglerposition in %: Start mittig (50) — links „vorher" (Basisbild),
+  // rechts „nachher"; ziehen blendet das Nachher-Bild stufenlos ein/aus.
+  const [pos, setPos] = useState(50);
   const stageRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const cur = showcaseScenes[active];
