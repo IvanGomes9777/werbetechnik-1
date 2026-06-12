@@ -15,28 +15,44 @@ const reveal: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 };
 
-/* Eine Szene als Vollfläche — „nachher" (volle Farbe) oder „vorher"
-   (dieselbe Komposition, entsättigt + abgedunkelt). */
+/* Eine Szene als Vollfläche. Mit echtem Foto (`img`) wird dieses formatfüllend
+   gezeigt; sonst dient der `surface`-Gradient als Platzhalter — „nachher" in
+   voller Farbe, „vorher" als dieselbe Komposition entsättigt + abgedunkelt. */
 function SceneLayer({
   surface,
+  img,
+  alt,
   variant,
 }: {
   surface: string;
+  img?: string;
+  alt?: string;
   variant: 'before' | 'after';
 }) {
   return (
-    <div
-      aria-hidden="true"
-      className="absolute inset-0"
-      style={{
-        background: surface,
-        filter:
-          variant === 'before'
-            ? 'grayscale(1) brightness(0.45) contrast(1.05)'
-            : undefined,
-      }}
-    >
-      {variant === 'after' && (
+    <div className="absolute inset-0">
+      {img ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={img}
+          alt={alt ?? ''}
+          draggable={false}
+          className="absolute inset-0 h-full w-full select-none object-cover"
+        />
+      ) : (
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background: surface,
+            filter:
+              variant === 'before'
+                ? 'grayscale(1) brightness(0.45) contrast(1.05)'
+                : undefined,
+          }}
+        />
+      )}
+      {!img && variant === 'after' && (
         <span className="pointer-events-none absolute inset-[-20%] bg-[linear-gradient(110deg,transparent_42%,rgba(255,255,255,0.16)_50%,transparent_60%)]" />
       )}
       <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(120%_90%_at_50%_120%,rgba(0,0,0,0.55),transparent_55%)]" />
@@ -81,7 +97,9 @@ function CountUp({ value, suffix }: { value: string; suffix?: string }) {
 export function Showcase() {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
-  const [pos, setPos] = useState(45); // Reglerposition in % (links = vorher)
+  // Reglerposition in %: Start mittig (50) — links „vorher" (Basisbild),
+  // rechts „nachher"; ziehen blendet das Nachher-Bild stufenlos ein/aus.
+  const [pos, setPos] = useState(50);
   const stageRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
   const cur = showcaseScenes[active];
@@ -181,13 +199,23 @@ export function Showcase() {
           className="relative mx-auto mt-10 aspect-[16/9] w-full max-w-4xl cursor-ew-resize select-none overflow-hidden rounded-3xl border border-line shadow-[0_50px_90px_-30px_rgba(0,0,0,0.85)] sm:mt-12"
         >
           {/* Vorher (Vollfläche) */}
-          <SceneLayer surface={cur.surface} variant="before" />
+          <SceneLayer
+            surface={cur.surface}
+            img={cur.beforeImg}
+            alt={`${cur.label} – vorher`}
+            variant="before"
+          />
           {/* Nachher (auf die rechte Seite des Reglers geklippt) */}
           <div
             className="absolute inset-0"
             style={{ clipPath: `inset(0 0 0 ${pos}%)` }}
           >
-            <SceneLayer surface={cur.surface} variant="after" />
+            <SceneLayer
+              surface={cur.surface}
+              img={cur.afterImg}
+              alt={`${cur.label} – nachher`}
+              variant="after"
+            />
           </div>
 
           {/* Ecken-Labels */}

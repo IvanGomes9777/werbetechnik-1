@@ -12,10 +12,22 @@
  * Die `surface`-Gradients sind hochwertige, rechtssichere Platzhalter, die das
  * Ergebnis stilisiert darstellen. Der „Vorher"-Zustand entsteht automatisch
  * durch einen Entsättigungs-/Abdunkel-Filter auf derselben Komposition.
- * TODO: später durch echte Vorher/Nachher-Fotopaare ersetzen (DSGVO:
+ * Sind `beforeImg`/`afterImg` gesetzt, werden stattdessen zwei echte Fotos
+ * gegeneinander gewischt (Fahrzeug = echte Aufnahmen).
+ * TODO: restliche Szenen durch echte Vorher/Nachher-Fotopaare ersetzen (DSGVO:
  * Kennzeichen unkenntlich machen) — siehe TODO.md.
  */
-export const showcaseScenes = [
+export type ShowcaseScene = {
+  id: string;
+  label: string;
+  caption: string;
+  accent: string;
+  surface: string;
+  beforeImg?: string;
+  afterImg?: string;
+};
+
+export const showcaseScenes: ShowcaseScene[] = [
   {
     id: 'fahrzeug',
     label: 'Fahrzeug',
@@ -23,6 +35,8 @@ export const showcaseScenes = [
     accent: '#9aa6b5',
     surface:
       'radial-gradient(120% 80% at 72% 8%, rgba(188,200,87,0.18), transparent 55%), linear-gradient(150deg,#33373f,#181a1f 58%,#0d0e11)',
+    beforeImg: '/showcase/fahrzeug-vorher.webp',
+    afterImg: '/showcase/fahrzeug-nachher.webp',
   },
   {
     id: 'lichtwerbung',
@@ -31,6 +45,8 @@ export const showcaseScenes = [
     accent: '#cdd56e',
     surface:
       'radial-gradient(60% 45% at 50% 42%, rgba(205,213,110,0.55), rgba(90,99,5,0.12) 60%, transparent 72%), linear-gradient(180deg,#15170f,#0b0c08)',
+    beforeImg: '/showcase/lichtwerbung-vorher.webp',
+    afterImg: '/showcase/lichtwerbung-nachher.webp',
   },
   {
     id: 'objekt',
@@ -48,7 +64,7 @@ export const showcaseScenes = [
     surface:
       'radial-gradient(100% 80% at 50% 30%, rgba(188,200,87,0.20), transparent 58%), linear-gradient(155deg,#22251a,#101209)',
   },
-] as const;
+];
 
 /**
  * Vertrauens-Band unter dem Slider.
