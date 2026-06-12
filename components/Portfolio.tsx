@@ -17,7 +17,7 @@ function Card({ item, dup = false }: { item: Item; dup?: boolean }) {
       aria-hidden={dup || undefined}
       tabIndex={dup ? -1 : undefined}
       aria-label={`${item.title} — ${item.category}, anfragen`}
-      className="group/card relative block aspect-[3/4] w-[68vw] max-w-[320px] shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(0,0,0,0.85)] transition-[transform,border-color,box-shadow] duration-300 ease-out hover:-translate-y-2 hover:border-olive-bright hover:shadow-[0_34px_64px_-22px_rgba(0,0,0,0.9),0_0_28px_-6px_rgba(188,200,87,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive-bright sm:w-[320px]"
+      className="group/card relative block aspect-[3/4] w-[68vw] max-w-[320px] shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-olive-bright hover:shadow-[0_34px_64px_-22px_rgba(0,0,0,0.9),0_0_28px_-6px_rgba(188,200,87,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive-bright sm:w-[320px]"
     >
       <div
         aria-hidden="true"
