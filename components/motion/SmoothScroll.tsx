@@ -2,7 +2,6 @@
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
-import Snap from 'lenis/snap';
 
 /**
  * Lenis Smooth-Scroll — die Basis für den „butterweichen" Premium-Look.
@@ -46,35 +45,141 @@ export function SmoothScroll() {
     };
     document.addEventListener('click', onClick);
 
-    // Section-Snapping NUR am Handy/Tablet (< lg). Festes „mandatory"-Einrasten:
-    // die Seite bleibt an JEDER Sektion verbindlich stehen — man kann nicht in
-    // einer Übergangsphase ruhen, jeder Scroll-Stopp landet sauber auf einer
-    // Sektion. Ein normaler Wisch trägt zur nächsten Sektion weiter.
-    // Snap-Punkte = Anfang jeder Sektion: die CoverPin-Container (Hero, Studio,
-    // Finishes — dort, wo die Sektion fertig gepinnt ist) plus die normalen
-    // Inhaltssektionen (#leistungen …). ignoreSticky/ignoreTransform, damit der
-    // Sticky-/Skalier-Aufbau der CoverPins die berechnete Position nicht verzerrt.
-    let snap: Snap | undefined;
+    // ---- Sektions-Navigation am Handy/Tablet (< lg) ---------------------------
+    // Ziel: EINE Wisch-/Wheel-Geste trägt direkt zur nächsten Sektion — durch den
+    // CoverPin-Übergang hindurch (Animation läuft mit, sanft via lenis.scrollTo),
+    // statt zwei-/dreimal scrollen zu müssen. Lange Inhaltssektionen
+    // (z. B. Leistungen-Akkordeon) bleiben frei scrollbar: dort wird nur an den
+    // oberen/unteren Rändern „weitergeschnappt".
+    const teardown: Array<() => void> = [];
     if (window.matchMedia('(max-width: 1023px)').matches) {
-      snap = new Snap(lenis, { type: 'mandatory' });
-      const targets = new Set<HTMLElement>(
-        Array.from(document.querySelectorAll<HTMLElement>('[data-coverpin]')),
-      );
-      const leistungen = document.getElementById('leistungen');
-      if (leistungen) targets.add(leistungen);
-      targets.forEach((el) =>
-        snap!.addElement(el, {
-          align: 'start',
-          ignoreSticky: true,
-          ignoreTransform: true,
-        }),
-      );
+      type Target = { y: number; el: HTMLElement; pin: boolean };
+      let targets: Target[] = [];
+
+      const computeTargets = () => {
+        const seen = new Set<HTMLElement>();
+        const list: Target[] = [];
+        document
+          .querySelectorAll<HTMLElement>('[data-coverpin]')
+          .forEach((el) => {
+            if (seen.has(el)) return;
+            seen.add(el);
+            list.push({ y: el.getBoundingClientRect().top + window.scrollY, el, pin: true });
+          });
+        const leistungen = document.getElementById('leistungen');
+        if (leistungen && !seen.has(leistungen)) {
+          list.push({
+            y: leistungen.getBoundingClientRect().top + window.scrollY,
+            el: leistungen,
+            pin: false,
+          });
+        }
+        targets = list.sort((a, b) => a.y - b.y);
+      };
+      computeTargets();
+
+      const EPS = 4;
+      // Index der Sektion, in der wir uns gerade befinden (inkl. Runway danach).
+      const floorIndex = (y: number) => {
+        let i = 0;
+        for (let k = 0; k < targets.length; k++) if (targets[k].y <= y + EPS) i = k;
+        return i;
+      };
+      const nextDown = (y: number) => targets.findIndex((t) => t.y > y + EPS);
+      const nextUp = (y: number) => {
+        for (let k = targets.length - 1; k >= 0; k--) if (targets[k].y < y - EPS) return k;
+        return -1;
+      };
+
+      let animating = false;
+      const goTo = (index: number) => {
+        if (index < 0 || index >= targets.length) return;
+        animating = true;
+        lenis.scrollTo(targets[index].y, {
+          duration: 1.15,
+          lock: true,
+          onComplete: () => {
+            animating = false;
+          },
+        });
+      };
+
+      // Entscheidet, ob die Geste „gejackt" wird (= zur Nachbarsektion springt)
+      // oder natives Scrollen innerhalb einer langen Inhaltssektion erlaubt bleibt.
+      const inJackZone = (dir: 1 | -1) => {
+        const cur = targets[floorIndex(window.scrollY)];
+        if (!cur || cur.pin) return true; // CoverPin-Sektionen immer durchspringen
+        const r = cur.el.getBoundingClientRect();
+        const atTop = r.top >= -EPS;
+        const atBottom = r.bottom <= window.innerHeight + EPS;
+        return dir > 0 ? atBottom : atTop;
+      };
+
+      const targetFor = (dir: 1 | -1) =>
+        dir > 0 ? nextDown(window.scrollY) : nextUp(window.scrollY);
+
+      // -- Wheel (Trackpad/Maus an kleinen Screens) --
+      const onWheel = (e: WheelEvent) => {
+        if (animating) {
+          e.preventDefault();
+          return;
+        }
+        if (Math.abs(e.deltaY) < 4) return;
+        computeTargets(); // Positionen frisch (Runway-Höhen sind dann gesetzt)
+        const dir: 1 | -1 = e.deltaY > 0 ? 1 : -1;
+        if (!inJackZone(dir)) return; // freies Scrollen in langer Sektion
+        const idx = targetFor(dir);
+        if (idx < 0) return; // nichts mehr in diese Richtung
+        e.preventDefault();
+        goTo(idx);
+      };
+      window.addEventListener('wheel', onWheel, { passive: false });
+      teardown.push(() => window.removeEventListener('wheel', onWheel));
+
+      // -- Touch --
+      const SWIPE = 28; // px, ab hier gilt es als bewusste Wischgeste
+      let startY = 0;
+      let handled = false;
+      const onTouchStart = (e: TouchEvent) => {
+        startY = e.touches[0].clientY;
+        handled = false;
+        computeTargets(); // Positionen frisch zu Gestenbeginn
+      };
+      const onTouchMove = (e: TouchEvent) => {
+        if (animating) {
+          e.preventDefault();
+          return;
+        }
+        const dy = startY - e.touches[0].clientY; // >0 = Wisch nach oben = nächste
+        const dir: 1 | -1 = dy >= 0 ? 1 : -1;
+        if (!inJackZone(dir)) return; // freies natives Scrollen zulassen
+        // In der Jack-Zone natives Scrollen unterbinden und gezielt springen.
+        e.preventDefault();
+        if (handled || Math.abs(dy) < SWIPE) return;
+        const idx = targetFor(dir);
+        if (idx < 0) return;
+        handled = true;
+        goTo(idx);
+      };
+      const onTouchEnd = () => {
+        handled = false;
+      };
+      window.addEventListener('touchstart', onTouchStart, { passive: true });
+      window.addEventListener('touchmove', onTouchMove, { passive: false });
+      window.addEventListener('touchend', onTouchEnd, { passive: true });
+      teardown.push(() => window.removeEventListener('touchstart', onTouchStart));
+      teardown.push(() => window.removeEventListener('touchmove', onTouchMove));
+      teardown.push(() => window.removeEventListener('touchend', onTouchEnd));
+
+      const onResize = () => computeTargets();
+      window.addEventListener('resize', onResize);
+      teardown.push(() => window.removeEventListener('resize', onResize));
     }
 
     return () => {
       cancelAnimationFrame(raf);
       document.removeEventListener('click', onClick);
-      snap?.destroy();
+      teardown.forEach((fn) => fn());
       lenis.destroy();
     };
   }, []);
