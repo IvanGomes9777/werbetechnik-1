@@ -161,10 +161,29 @@ export function SmoothScroll() {
         if (animating) return;
         const dy = startY - lastY; // >0 = Wisch nach oben = nächste Sektion
         const dir: 1 | -1 = dy >= 0 ? 1 : -1;
-        if (freeScroll(dir)) return; // frei in langer Sektion
         const dt = Math.max(1, Date.now() - startT);
         const deliberate = Math.abs(dy) >= SWIPE || Math.abs(dy) / dt >= FAST;
         const y = window.scrollY;
+        const cur = targets[floorIndex(y)];
+
+        // Inhaltssektion (z. B. Leistungen): frei scrollbar. NIEMALS auf den
+        // eigenen Sektionsanfang zurückspringen (sonst „scrollt die Seite
+        // automatisch nach oben", wenn man darin nach unten/oben scrollt). Nur
+        // an den Rändern per bewusstem Wisch zur Nachbarsektion wechseln.
+        if (cur && !cur.pin) {
+          if (!deliberate) return;
+          const r = cur.el.getBoundingClientRect();
+          if (dir < 0 && r.top >= -EPS) {
+            const idx = nextUp(y);
+            if (idx >= 0) goTo(idx);
+          } else if (dir > 0 && r.bottom <= window.innerHeight + EPS) {
+            const idx = nextDown(y);
+            if (idx >= 0) goTo(idx);
+          }
+          return;
+        }
+
+        // Pin-Sektion (cinematic): sauber auf genau eine Sektion einrasten.
         let idx: number;
         if (deliberate) {
           idx = dir > 0 ? nextDown(y) : nextUp(y);
