@@ -2,6 +2,26 @@
 
 import { motion, useReducedMotion, type Variants } from 'framer-motion';
 import { portfolio } from '@/lib/content';
+import { site } from '@/lib/site';
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+      <circle cx="12" cy="12" r="4.2" />
+      <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const reveal: Variants = {
   hidden: { opacity: 0, y: 26 },
@@ -119,7 +139,21 @@ export function Portfolio() {
           </div>
         )}
 
-        <div className="wrap mt-9">
+        <div className="wrap mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
+          {/* Gut sichtbarer Instagram-Button — mehr Arbeiten im Feed */}
+          <a
+            href={site.instagram.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group/ig inline-flex items-center gap-3 rounded-full border border-olive-bright/60 bg-olive/15 px-6 py-3.5 text-[0.95rem] font-medium text-paper shadow-[0_0_0_0_rgba(188,200,87,0)] transition-all duration-300 hover:border-olive-bright hover:bg-olive/25 hover:shadow-[0_0_28px_-6px_rgba(188,200,87,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive-bright"
+          >
+            <InstagramIcon className="h-5 w-5 text-olive-bright transition-transform duration-300 group-hover/ig:scale-110" />
+            <span>
+              Mehr auf Instagram{' '}
+              <span className="text-olive-bright">{site.instagram.handle}</span>
+            </span>
+          </a>
+
           <a
             href="#kontakt"
             className="inline-flex items-center gap-2 text-sm uppercase tracking-[0.18em] text-olive-bright transition-colors hover:text-olive-soft"
