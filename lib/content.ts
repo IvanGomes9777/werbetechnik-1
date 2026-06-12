@@ -5,67 +5,72 @@
  * (Endpreis nach kostenloser Begutachtung).
  */
 
-export const finishes = [
+/**
+ * Showcase „Vorher / Nachher" (Section 3) — Szenen über das ganze
+ * Leistungsspektrum (Fahrzeug, Lichtwerbung, Objektbeschriftung, Schilder).
+ *
+ * Die `surface`-Gradients sind hochwertige, rechtssichere Platzhalter, die das
+ * Ergebnis stilisiert darstellen. Der „Vorher"-Zustand entsteht automatisch
+ * durch einen Entsättigungs-/Abdunkel-Filter auf derselben Komposition.
+ * TODO: später durch echte Vorher/Nachher-Fotopaare ersetzen (DSGVO:
+ * Kennzeichen unkenntlich machen) — siehe TODO.md.
+ */
+export const showcaseScenes = [
   {
-    id: 'matt',
-    icon: '🖤',
-    name: 'Matt',
-    desc: 'Komplett glanzlos — schluckt Reflexe, wirkt edel und understated. Lässt Form und Linien des Fahrzeugs sprechen.',
-    surface: 'linear-gradient(150deg,#2b2b2b,#0e0e0e)',
-    accent: '#9a9a9a',
-  },
-  {
-    id: 'satin',
-    icon: '✨',
-    name: 'Satin',
-    desc: 'Seidiger, weicher Tiefenglanz zwischen Matt und Hochglanz. Hochwertig und warm, ohne zu spiegeln.',
-    surface: 'linear-gradient(150deg,#4a4e57,#1c1e23 60%,#15161a)',
+    id: 'fahrzeug',
+    icon: '🚗',
+    label: 'Fahrzeug',
+    caption: 'Vollfolierung · Satin-Schwarz',
     accent: '#9aa6b5',
-  },
-  {
-    id: 'chrome',
-    icon: '🪞',
-    name: 'Satin-Chrome',
-    desc: 'Metallisch glänzend wie poliertes oder gebürstetes Metall — fängt das Licht in feinen Linien. Premium und auffällig.',
     surface:
-      'repeating-linear-gradient(125deg,#8e9193 0 2px,#cfd2d4 2px 4px,#7c7f81 4px 7px)',
-    accent: '#d6dadd',
+      'radial-gradient(120% 80% at 72% 8%, rgba(188,200,87,0.18), transparent 55%), linear-gradient(150deg,#33373f,#181a1f 58%,#0d0e11)',
   },
   {
-    id: 'colorshift',
-    icon: '🌈',
-    name: 'Color-Shift',
-    desc: 'Farbwechsel je nach Lichtwinkel — aus jeder Perspektive ein anderer Ton. Lebendig, individuell und unverwechselbar.',
-    surface: 'linear-gradient(125deg,#00c2cc,#7a5cff 42%,#ff3fa0 78%,#00c2cc)',
-    accent: '#8b5cff',
-  },
-  {
-    id: 'carbon',
-    icon: '🏁',
-    name: 'Carbon-Optik',
-    desc: 'Feine Carbonfaser-Struktur — sportlicher Look, ideal für Akzente wie Dach, Spiegel oder Motorhaube.',
+    id: 'lichtwerbung',
+    icon: '💡',
+    label: 'Lichtwerbung',
+    caption: 'Leuchtschrift · Ladenfront',
+    accent: '#cdd56e',
     surface:
-      'repeating-linear-gradient(45deg,rgba(255,255,255,.06) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,rgba(255,255,255,.05) 0 2px,transparent 2px 6px),linear-gradient(#181818,#0c0c0c)',
-    accent: '#6b7077',
+      'radial-gradient(60% 45% at 50% 42%, rgba(205,213,110,0.55), rgba(90,99,5,0.12) 60%, transparent 72%), linear-gradient(180deg,#15170f,#0b0c08)',
   },
   {
-    id: 'camouflage',
-    icon: '🪖',
-    name: 'Camouflage',
-    desc: 'Tarnmuster nach Wunsch — Army, Digital oder individuell. Markanter Auftritt mit Charakter.',
+    id: 'objekt',
+    icon: '🏢',
+    label: 'Objektbeschriftung',
+    caption: 'Schaufenster · Folienschrift',
+    accent: '#9fb0c4',
     surface:
-      'radial-gradient(circle at 20% 30%,#2a3018 0 12%,transparent 13%),radial-gradient(circle at 62% 52%,#565f33 0 14%,transparent 15%),radial-gradient(circle at 82% 22%,#1c2010 0 11%,transparent 12%),radial-gradient(circle at 38% 76%,#6b733f 0 12%,transparent 13%),radial-gradient(circle at 88% 82%,#2a3018 0 15%,transparent 16%),linear-gradient(#3a4327,#2a3018)',
-    accent: '#9fae4e',
+      'linear-gradient(125deg, rgba(255,255,255,0.10) 0 2px, transparent 2px 9px), radial-gradient(90% 70% at 30% 20%, rgba(159,176,196,0.22), transparent 60%), linear-gradient(160deg,#1b1f24,#0c0e10)',
   },
   {
-    id: 'custom',
-    icon: '🎨',
-    name: 'Custom-Design',
-    desc: 'Individuell: Wunschfarben, Muster, Grafiken und Logos — alles ist möglich. Auch die Basis für Werbe- & Flottenfolierung.',
-    surface: 'linear-gradient(125deg,#ff6a00,#ff1fa0 32%,#7a5cff 64%,#00e5ff)',
-    accent: '#ff2da6',
+    id: 'schild',
+    icon: '🪧',
+    label: 'Schilder & Werbung',
+    caption: 'Firmenschild · Eingang',
+    accent: '#bcc857',
+    surface:
+      'radial-gradient(100% 80% at 50% 30%, rgba(188,200,87,0.20), transparent 58%), linear-gradient(155deg,#22251a,#101209)',
   },
-];
+] as const;
+
+/**
+ * Vertrauens-Band unter dem Slider.
+ * `value: '5,0'` ist die verifizierte Google-Bewertung (lib/site.ts).
+ * Die mit `confirm: true` markierten Zahlen sind BEISPIEL-Platzhalter und von
+ * Ivan zu bestätigen, bevor sie als Fakt online gehen — siehe TODO.md.
+ */
+export const trustStats = [
+  { value: '5,0', suffix: '★', label: 'Google-Bewertung', confirm: false },
+  { value: '7', suffix: '+', label: 'Jahre Erfahrung', confirm: true },
+  { value: '500', suffix: '+', label: 'Projekte umgesetzt', confirm: true },
+] as const;
+
+export const trustChips = [
+  { icon: '🎯', text: 'Premium-Gussfolien' },
+  { icon: '📍', text: 'Studio in Münster' },
+  { icon: '🧼', text: 'Rückstandsfrei entfernbar' },
+] as const;
 
 export const services = [
   { icon: '🚗', name: 'Vollfolierung (Farbwechsel)', desc: 'Komplette Designfolierung — neue Farbe, voller Werterhalt.', price: 'ab 1.990 €', dauer: '2–4 Tage' },

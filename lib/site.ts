@@ -50,7 +50,7 @@ export const reviews = [
 
 export const navLinks = [
   { label: 'Studio', href: '#studio' },
-  { label: 'Finishes', href: '#finishes' },
+  { label: 'Ergebnisse', href: '#ergebnisse' },
   { label: 'Portfolio', href: '#portfolio' },
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Kontakt', href: '#kontakt' },
