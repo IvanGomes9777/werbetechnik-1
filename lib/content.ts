@@ -65,6 +65,8 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#bcc857',
     surface:
       'radial-gradient(100% 80% at 50% 30%, rgba(188,200,87,0.20), transparent 58%), linear-gradient(155deg,#22251a,#101209)',
+    beforeImg: '/showcase/schild-vorher.webp',
+    afterImg: '/showcase/schild-nachher.webp',
   },
 ];
 

@@ -26,7 +26,10 @@ eingepflegt (`lib/site.ts`).
         Bei Bedarf durch echtes Referenzprojekt ersetzen.
       - **Objektbeschriftung** = KI-generiertes Paar (`objekt-{vorher,nachher}.webp`,
         leeres Schaufenster → mit „GV WERBETECHNIK"-Folienbeschriftung).
-      - Noch offen: Schilder (CSS-Platzhalter).
+      - **Schilder & Werbung** = KI-generiertes Paar (`schild-{vorher,nachher}.webp`,
+        Eingang ohne Schild → mit montiertem „GV WERBETECHNIK"-Firmenschild).
+      - Alle 4 Szenen haben jetzt Vorher/Nachher-Bilder; Fahrzeug/Lichtwerbung/
+        Objekt/Schild sind KI-generiert → bei Bedarf durch echte Projekte ersetzen.
       - DSGVO: sichtbare Kennzeichen (GT3 RS) ggf. unkenntlich machen.
 - [ ] **Zahlen bestätigen** (Section „Ergebnisse", `trustStats` in
       `lib/content.ts`) — `Jahre Erfahrung` und `Projekte umgesetzt` sind
