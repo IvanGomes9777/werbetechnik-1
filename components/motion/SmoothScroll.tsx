@@ -120,7 +120,11 @@ export function SmoothScroll() {
         if (!targets[idx]) return;
         animating = true;
         lenis.scrollTo(targets[idx].y, {
-          duration: 1.1,
+          // Langsamer + sanfter Sektionswechsel: Ease-in-out (weicher Start UND
+          // weiches Auslaufen) statt des schnellen Ease-out → nicht ruckartig.
+          duration: 1.7,
+          easing: (t: number) =>
+            t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2,
           lock: true,
           onComplete: () => {
             animating = false;
