@@ -31,6 +31,11 @@ export const site = {
     value: 5.0,
     count: 1,
     source: 'Google',
+    // BEISPIEL – ersetzen: Google Place-ID eintragen, damit der „Bewerten“-Link
+    // direkt das Google-Rezensionsfenster öffnet.
+    // Format: https://search.google.com/local/writereview?placeid=PLACE_ID
+    reviewUrl:
+      'https://search.google.com/local/writereview?placeid=PLACE_ID_EINTRAGEN',
   },
   url: 'https://www.gv-werbetechnik.de',
   legal: {

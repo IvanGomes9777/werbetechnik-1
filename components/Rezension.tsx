@@ -138,6 +138,32 @@ export function Rezension() {
             {review.text}
           </blockquote>
         </motion.figure>
+
+        {/* CTA: Besucher zu einer eigenen Google-Bewertung einladen */}
+        <motion.div
+          variants={reveal}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.6 }}
+          className="mt-9"
+        >
+          <a
+            href={site.rating.reviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GV Werbetechnik auf Google bewerten"
+            className="group inline-flex items-center gap-2.5 rounded-full border border-line px-7 py-3.5 text-xs font-medium uppercase tracking-[0.2em] text-paper transition-colors hover:border-olive-bright hover:text-olive-bright"
+          >
+            <GoogleG className="h-4 w-4 shrink-0" />
+            Auf {site.rating.source} bewerten
+            <span
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-x-0.5"
+            >
+              →
+            </span>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
