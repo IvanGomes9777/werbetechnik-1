@@ -215,11 +215,26 @@ export function Kontakt() {
               <input id="name" name="name" type="text" required placeholder="Dein Name" className={fieldClass} />
             </div>
             <div>
-              <label htmlFor="phone" className="mb-2 block text-[0.78rem] uppercase tracking-[0.16em] text-paper-dim">
-                Handynummer <span className="text-paper-dim/60">(optional)</span>
+              <label htmlFor="email" className="mb-2 block text-[0.78rem] uppercase tracking-[0.16em] text-paper-dim">
+                E-Mail <span className="text-olive-bright">*</span>
               </label>
-              <input id="phone" name="phone" type="tel" placeholder="0176 …" className={fieldClass} />
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder="name@beispiel.de"
+                className={fieldClass}
+              />
             </div>
+          </div>
+
+          <div>
+            <label htmlFor="phone" className="mb-2 block text-[0.78rem] uppercase tracking-[0.16em] text-paper-dim">
+              Handynummer <span className="text-paper-dim/60">(optional)</span>
+            </label>
+            <input id="phone" name="phone" type="tel" autoComplete="tel" placeholder="0176 …" className={fieldClass} />
           </div>
 
           <div>
