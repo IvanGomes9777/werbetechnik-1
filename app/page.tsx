@@ -5,6 +5,8 @@ import { Showcase } from '@/components/Showcase';
 import { Leistungen } from '@/components/Leistungen';
 import { Portfolio } from '@/components/Portfolio';
 import { Rezension } from '@/components/Rezension';
+import { Kontakt } from '@/components/Kontakt';
+import { Footer } from '@/components/Footer';
 import { CoverPin } from '@/components/motion/CoverPin';
 
 export default function Home() {
@@ -32,15 +34,19 @@ export default function Home() {
       <CoverPin z={40}>
         <Portfolio />
       </CoverPin>
-      {/* Bewertung: bildschirmfüllende Abschluss-Sektion, die per Zoom-Through
-          über das gepinnte Portfolio gleitet. */}
-      <div className="relative z-50">
+      {/* Bewertung: bildschirmfüllend, gepinnt — Kontakt gleitet per Zoom-Through
+          darüber. */}
+      <CoverPin z={50}>
         <Rezension />
+      </CoverPin>
+      <div className="relative z-[60]">
+        <Kontakt />
+        <Footer />
       </div>
       {/*
-        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Bewertung
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Bewertung · ✓ Kontakt · ✓ Footer
         Übergänge: Zoom-Through-Stack zwischen allen Sections.
-        Nächste Sections: Kontakt · Footer  (Ablauf bewusst weggelassen)
+        (Ablauf bewusst weggelassen.)
       */}
     </>
   );

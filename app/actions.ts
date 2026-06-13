@@ -15,9 +15,9 @@ export async function submitContact(
   formData: FormData,
 ): Promise<ContactState> {
   const name = String(formData.get('name') ?? '').trim();
+  const leistung = String(formData.get('leistung') ?? '').trim();
   const vehicle = String(formData.get('vehicle') ?? '').trim();
-  const finish = String(formData.get('finish') ?? '').trim();
-  const scope = String(formData.get('scope') ?? '').trim();
+  const phone = String(formData.get('phone') ?? '').trim();
   const message = String(formData.get('message') ?? '').trim();
   // Honeypot gegen Bots
   const trap = String(formData.get('company') ?? '').trim();
@@ -36,9 +36,9 @@ export async function submitContact(
   // TODO: Mailversand anbinden (z.B. Resend). Vorerst Konsolen-Log.
   console.log('[Kontaktanfrage GV Werbetechnik]', {
     name,
+    leistung,
     vehicle,
-    finish,
-    scope,
+    phone,
     message,
     receivedAt: new Date().toISOString(),
   });

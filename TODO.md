@@ -54,7 +54,8 @@ eingepflegt (`lib/site.ts`).
       ersetzen.
 - [ ] **OG-Image** (`/public/og-image.jpg`, 1200×630) ergänzen — referenziert in
       `app/layout.tsx`.
-- [ ] **Favicon** (`app/icon.png` / `favicon.ico`) ergänzen.
+- [x] **Favicon** ergänzt — gebrandetes `app/icon.svg` (noir Kachel + olives
+      „GV"-Monogramm). Bei Bedarf später durch echtes Logo ersetzen.
 
 ## ✉️ Funktionalität
 
