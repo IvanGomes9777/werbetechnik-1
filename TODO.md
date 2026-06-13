@@ -34,6 +34,14 @@ eingepflegt (`lib/site.ts`).
 - [ ] **Zahlen bestätigen** (Section „Ergebnisse", `trustStats` in
       `lib/content.ts`) — `Jahre Erfahrung` und `Projekte umgesetzt` sind
       BEISPIEL-Platzhalter (`confirm: true`). 5,0★ Google ist verifiziert.
+- [ ] **Live-Google-Bewertungen** (Section „Bewertung", `components/Rezension.tsx`)
+      — Wunsch: automatisch die **neuesten 3** Google-Bewertungen anzeigen
+      (neue rückt rein, älteste fällt raus). Umsetzung via **Google Places API**
+      („Place Details", liefert max. 5 Reviews, Sortierung „newest"), serverseitig
+      mit ISR-Caching + Fallback auf die aktuelle Karte.
+      Benötigt: `GOOGLE_PLACE_ID` + `GOOGLE_PLACES_API_KEY` (Billing aktiv) als
+      Env-Variablen. Optional: nur ≥ 4 Sterne filtern. Aktuell: 1 feste Karte
+      (Felix Schröter) aus `lib/site.ts`.
 - [ ] **Portfolio** (Cinematic Filmstrip, `components/Portfolio.tsx`) — aktuell
       rechtssichere CSS-Platzhalter-Kacheln (`portfolio` in `lib/content.ts`).
       Durch echte GV-Projektfotos ersetzen.
