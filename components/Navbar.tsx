@@ -7,6 +7,7 @@ const links = [
   { label: 'Leistungen', href: '#leistungen' },
   { label: 'Ergebnisse', href: '#ergebnisse' },
   { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Standort', href: '#standort' },
   { label: 'Bewertungen', href: '#rezension' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
@@ -61,8 +62,8 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
-          <ul className="flex items-center gap-7">
+        <div className="hidden items-center gap-6 lg:flex">
+          <ul className="flex items-center gap-6">
             {links.map((l) => (
               <li key={l.href}>
                 <a
@@ -76,7 +77,7 @@ export function Navbar() {
           </ul>
           <a
             href="#kontakt"
-            className="border border-[var(--line)] px-5 py-2 text-xs uppercase tracking-[0.18em] text-paper transition-colors hover:border-[var(--olive-bright)] hover:text-[var(--olive-bright)]"
+            className="hidden border border-[var(--line)] px-5 py-2 text-xs uppercase tracking-[0.18em] text-paper transition-colors hover:border-[var(--olive-bright)] hover:text-[var(--olive-bright)] xl:inline-block"
           >
             Beratung anfragen
           </a>
