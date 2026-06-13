@@ -37,7 +37,7 @@ function Card({ item, dup = false }: { item: Item; dup?: boolean }) {
       aria-hidden={dup || undefined}
       tabIndex={dup ? -1 : undefined}
       aria-label={`${item.title} — ${item.category}, anfragen`}
-      className="group/card relative block aspect-[3/4] w-[68vw] max-w-[320px] shrink-0 cursor-pointer overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-olive-bright hover:shadow-[0_34px_64px_-22px_rgba(0,0,0,0.9),0_0_28px_-6px_rgba(188,200,87,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive-bright sm:w-[320px]"
+      className="group/card relative block aspect-[3/4] w-[68vw] max-w-[320px] shrink-0 snap-start cursor-pointer overflow-hidden rounded-2xl border border-line shadow-[0_40px_80px_-40px_rgba(0,0,0,0.85)] transition-[border-color,box-shadow] duration-300 ease-out hover:border-olive-bright hover:shadow-[0_34px_64px_-22px_rgba(0,0,0,0.9),0_0_28px_-6px_rgba(188,200,87,0.6)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-olive-bright sm:w-[320px]"
     >
       <div
         aria-hidden="true"
@@ -116,27 +116,35 @@ export function Portfolio() {
         </div>
 
         {reduce ? (
-          // Reduced Motion: statischer, horizontal scrollbarer Streifen
-          <div className="mt-10 flex gap-5 overflow-x-auto px-[clamp(1.25rem,5vw,3.5rem)] pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          // Reduced Motion: statischer, scrollbarer Streifen (alle Größen)
+          <div className="mt-10 flex snap-x gap-5 overflow-x-auto px-[clamp(1.25rem,5vw,3.5rem)] pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {portfolio.map((item) => (
               <Card key={item.id} item={item} />
             ))}
           </div>
         ) : (
-          // Auto-Showreel: läuft endlos, pausiert beim Hovern
-          <div className="group/strip mt-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)] sm:mt-12">
-            <div
-              className="flex w-max gap-5 animate-marquee group-hover/strip:[animation-play-state:paused]"
-              style={{ animationDuration: '52s' }}
-            >
+          <>
+            {/* Mobile/Tablet: manuell wischen — keine Auto-Bewegung */}
+            <div className="mt-10 flex snap-x gap-5 overflow-x-auto px-[clamp(1.25rem,5vw,3.5rem)] pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:hidden">
               {portfolio.map((item) => (
                 <Card key={item.id} item={item} />
               ))}
-              {portfolio.map((item) => (
-                <Card key={`dup-${item.id}`} item={item} dup />
-              ))}
             </div>
-          </div>
+            {/* Desktop (lg+): Auto-Showreel, pausiert beim Hovern */}
+            <div className="group/strip mt-10 hidden overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_5%,#000_95%,transparent)] sm:mt-12 lg:block">
+              <div
+                className="flex w-max gap-5 animate-marquee group-hover/strip:[animation-play-state:paused]"
+                style={{ animationDuration: '52s' }}
+              >
+                {portfolio.map((item) => (
+                  <Card key={item.id} item={item} />
+                ))}
+                {portfolio.map((item) => (
+                  <Card key={`dup-${item.id}`} item={item} dup />
+                ))}
+              </div>
+            </div>
+          </>
         )}
 
         <div className="wrap mt-10 flex flex-wrap items-center gap-x-7 gap-y-4">
