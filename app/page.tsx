@@ -8,6 +8,7 @@ import { Standort } from '@/components/Standort';
 import { Rezension } from '@/components/Rezension';
 import { Kontakt } from '@/components/Kontakt';
 import { Footer } from '@/components/Footer';
+import { MobileContactBar } from '@/components/MobileContactBar';
 import { CoverPin } from '@/components/motion/CoverPin';
 
 export default function Home() {
@@ -47,6 +48,7 @@ export default function Home() {
         <Kontakt />
         <Footer />
       </div>
+      <MobileContactBar />
       {/*
         Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Standort · ✓ Bewertung · ✓ Kontakt · ✓ Footer
         Übergänge: Zoom-Through-Stack zwischen allen Sections.
