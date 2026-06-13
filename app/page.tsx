@@ -4,6 +4,7 @@ import { Studio } from '@/components/Studio';
 import { Showcase } from '@/components/Showcase';
 import { Leistungen } from '@/components/Leistungen';
 import { Portfolio } from '@/components/Portfolio';
+import { Standort } from '@/components/Standort';
 import { Rezension } from '@/components/Rezension';
 import { Kontakt } from '@/components/Kontakt';
 import { Footer } from '@/components/Footer';
@@ -34,17 +35,20 @@ export default function Home() {
       <CoverPin z={40}>
         <Portfolio />
       </CoverPin>
+      <CoverPin z={50}>
+        <Standort />
+      </CoverPin>
       {/* Bewertung: bildschirmfüllend, gepinnt — Kontakt gleitet per Zoom-Through
           darüber. */}
-      <CoverPin z={50}>
+      <CoverPin z={60}>
         <Rezension />
       </CoverPin>
-      <div className="relative z-[60]">
+      <div className="relative z-[64]">
         <Kontakt />
         <Footer />
       </div>
       {/*
-        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Bewertung · ✓ Kontakt · ✓ Footer
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Standort · ✓ Bewertung · ✓ Kontakt · ✓ Footer
         Übergänge: Zoom-Through-Stack zwischen allen Sections.
         (Ablauf bewusst weggelassen.)
       */}
