@@ -12,10 +12,11 @@ export function SmoothScroll() {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const lenis = new Lenis({
-      duration: 1.15,
+      duration: 0.9,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-      touchMultiplier: 1.6,
+      wheelMultiplier: 1.15,
+      touchMultiplier: 1.8,
     });
 
     let raf = 0;
