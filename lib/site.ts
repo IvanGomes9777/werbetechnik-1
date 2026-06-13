@@ -31,6 +31,10 @@ export const site = {
     value: 5.0,
     count: 1,
     source: 'Google',
+    // BEISPIEL – ersetzen: Google Place ID aus dem Google-Unternehmensprofil
+    // eintragen, damit der Link direkt den „Rezension schreiben“-Dialog öffnet.
+    // Solange leer, wird auf die Google-Maps-Suche nach dem Studio verlinkt.
+    googlePlaceId: '',
   },
   url: 'https://www.gv-werbetechnik.de',
   legal: {
@@ -39,6 +43,17 @@ export const site = {
     vatId: 'DE000000000',
   },
 } as const;
+
+/**
+ * Direkt-Link zum Abgeben einer Google-Rezension.
+ * Mit Place ID öffnet sich der „Rezension schreiben“-Dialog, sonst Fallback
+ * auf die Google-Maps-Suche, über die Besucher das Studio finden & bewerten.
+ */
+export const googleReviewUrl = site.rating.googlePlaceId
+  ? `https://search.google.com/local/writereview?placeid=${site.rating.googlePlaceId}`
+  : `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${site.name} ${site.address.city}`,
+    )}`;
 
 export const reviews = [
   {

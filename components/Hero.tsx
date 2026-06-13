@@ -9,7 +9,7 @@ import {
   type Variants,
 } from 'framer-motion';
 import { useGyroTilt } from './motion/useGyroTilt';
-import { site } from '@/lib/site';
+import { site, googleReviewUrl } from '@/lib/site';
 
 const container: Variants = {
   hidden: {},
@@ -151,15 +151,22 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <motion.p
+          <motion.a
             variants={item}
-            className="shrink-0 text-sm text-paper-dim sm:text-right"
+            href={googleReviewUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Uns auf Google bewerten – aktuell 5,0 Sterne"
+            className="group shrink-0 text-sm text-paper-dim transition-colors hover:text-paper sm:text-right"
           >
             <span className="block font-playfair text-3xl text-olive-bright">
               5,0 ★
             </span>
             Google · Münster
-          </motion.p>
+            <span className="mt-1 block text-xs uppercase tracking-[0.18em] text-olive-bright/80 underline-offset-4 group-hover:underline">
+              Auf Google bewerten →
+            </span>
+          </motion.a>
         </motion.div>
       </div>
 

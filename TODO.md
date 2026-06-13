@@ -12,6 +12,9 @@ eingepflegt (`lib/site.ts`).
 - [ ] **USt-IdNr. (Impressum)** ergänzen — `lib/site.ts` → `legal.vatId`.
 - [ ] **Geo-Koordinaten** für JSON-LD/Map verifizieren — `lib/site.ts` → `geo`.
 - [ ] **Domain/URL** final setzen — `lib/site.ts` → `url` (für JSON-LD, sitemap, OG).
+- [ ] **Google Place ID** eintragen — `lib/site.ts` → `rating.googlePlaceId`.
+      Dann führt der „Auf Google bewerten“-Link (Hero) direkt zum
+      Rezensions-Dialog. Solange leer: Fallback auf Google-Maps-Suche.
 
 ## 🖼️ Medien
 
