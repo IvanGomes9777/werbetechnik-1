@@ -16,6 +16,10 @@ const config: Config = {
         paper: 'var(--paper)',
         'paper-dim': 'var(--paper-dim)',
         line: 'var(--line)',
+        // Legacy-Aliase (früheres „Gold"-Design) → aktuelles Olive-System.
+        // Ohne diese rendern u. a. die Cookie-Buttons ohne Hintergrundfarbe.
+        gold: 'var(--olive-bright)',
+        'gold-soft': 'var(--olive-soft)',
       },
       borderColor: {
         line: 'var(--line)',
@@ -23,7 +27,10 @@ const config: Config = {
       fontFamily: {
         // Variant display/body fonts
         anton: ['var(--font-anton)', 'sans-serif'],
-        playfair: ['var(--font-playfair)', 'serif'],
+        // Display-Schrift des Projekts: Marcellus (ersetzt Playfair).
+        // Alias-Keys bleiben (playfair/display), damit Bestandscode unverändert erbt.
+        playfair: ['var(--font-marcellus)', 'serif'],
+        display: ['var(--font-marcellus)', 'serif'],
         montserrat: ['var(--font-montserrat)', 'sans-serif'],
         sora: ['var(--font-sora)', 'sans-serif'],
         bebas: ['var(--font-bebas)', 'sans-serif'],
@@ -34,6 +41,10 @@ const config: Config = {
       },
       maxWidth: {
         content: '1240px',
+      },
+      letterSpacing: {
+        // Legacy-Alias: tracking-eyebrow (passt zur .eyebrow-Komponente).
+        eyebrow: '0.42em',
       },
       keyframes: {
         'fade-up': {

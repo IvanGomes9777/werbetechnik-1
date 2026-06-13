@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-13T18:35:00Z",
+  "title": "Design System: GV Werbetechnik",
+  "extensions": {
+    "colorMeta": {
+      "olive": {
+        "role": "primary",
+        "displayName": "Studio-Olive",
+        "canonical": "oklch(43% 0.09 113)",
+        "tonalRamp": ["oklch(18% 0.04 113)", "oklch(26% 0.06 113)", "oklch(34% 0.08 113)", "oklch(43% 0.09 113)", "oklch(55% 0.11 113)", "oklch(67% 0.12 113)", "oklch(80% 0.10 113)", "oklch(92% 0.05 113)"]
+      },
+      "olive-bright": {
+        "role": "primary",
+        "displayName": "Signal-Olive",
+        "canonical": "oklch(81% 0.13 113)",
+        "tonalRamp": ["oklch(20% 0.05 113)", "oklch(30% 0.07 113)", "oklch(41% 0.10 113)", "oklch(52% 0.12 113)", "oklch(63% 0.13 113)", "oklch(72% 0.13 113)", "oklch(81% 0.13 113)", "oklch(92% 0.07 113)"]
+      },
+      "noir": {
+        "role": "neutral",
+        "displayName": "Noir",
+        "canonical": "oklch(15% 0.004 250)",
+        "tonalRamp": ["oklch(13% 0.004 250)", "oklch(17% 0.005 250)", "oklch(22% 0.006 250)", "oklch(30% 0.006 250)", "oklch(45% 0.006 250)", "oklch(62% 0.006 250)", "oklch(80% 0.005 250)", "oklch(93% 0.004 250)"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(93% 0.006 90)",
+        "tonalRamp": ["oklch(28% 0.006 90)", "oklch(40% 0.007 90)", "oklch(53% 0.008 90)", "oklch(66% 0.008 90)", "oklch(76% 0.008 90)", "oklch(85% 0.007 90)", "oklch(93% 0.006 90)", "oklch(97% 0.004 90)"]
+      },
+      "paper-dim": {
+        "role": "neutral",
+        "displayName": "Paper-Dim",
+        "canonical": "oklch(76% 0.008 90)",
+        "tonalRamp": ["oklch(28% 0.006 90)", "oklch(40% 0.007 90)", "oklch(53% 0.008 90)", "oklch(66% 0.008 90)", "oklch(76% 0.008 90)", "oklch(85% 0.007 90)", "oklch(93% 0.006 90)", "oklch(97% 0.004 90)"]
+      }
+    },
+    "typographyMeta": {
+      "hero": { "displayName": "Hero", "purpose": "Die eine Hero-Aussage. Playfair Display, mit Text-Shadow gegen das Video." },
+      "display": { "displayName": "Display", "purpose": "Sektions-Überschriften (h2). Playfair Display." },
+      "body": { "displayName": "Body", "purpose": "Fließtext. Inter 300, lh 1.7, max 65–75ch." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Kicker über Sektionen, Form-Legends. Inter 500, uppercase, tracking 0.42em, Signal-Olive." }
+    },
+    "shadows": [
+      { "name": "object-drop", "value": "0 40px 80px -20px rgba(0,0,0,0.85)", "purpose": "Unter großen schwebenden Objekten/Szenen (Studio-Schwebe)." },
+      { "name": "lifted-card", "value": "0 40px 80px -30px rgba(0,0,0,0.75)", "purpose": "Unter der hellen Google-Rezensions-Karte auf Noir." },
+      { "name": "section-cover", "value": "0 -40px 80px -20px rgba(0,0,0,0.9)", "purpose": "Oberkante der über den Hero gleitenden Sektion (Desktop-Transition)." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Standard-Easing für Reveals und State-Transitions; exponentielles Ausklingen, kein Bounce." },
+      { "name": "satin-sweep", "value": "9s ease-in-out infinite", "purpose": "Lichtschimmer-Sweep im Hero / über primären CTA." },
+      { "name": "marquee", "value": "28s linear infinite", "purpose": "Endlos-Laufband (z. B. Trust-/Logo-Band)." }
+    ],
+    "breakpoints": [
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" },
+      { "name": "content-max", "value": "1240px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primäre Aktion (Beratung anfragen, Anrufen, Anfrage senden). Olive-Pille, ruhiger Farb-Hover.",
+      "html": "<button class=\"ds-btn-primary\">Beratung anfragen</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:.6rem; background:#5a6305; color:#f2f0e6; padding:14px 32px; border:none; border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:.75rem; font-weight:500; text-transform:uppercase; letter-spacing:.2em; cursor:pointer; transition:background .3s cubic-bezier(0.22,1,0.36,1); } .ds-btn-primary:hover { background:#6c771b; } .ds-btn-primary:focus-visible { outline:2px solid #bcc857; outline-offset:3px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Sekundäre Aktion (Portfolio ansehen). Transparent mit Haarlinie, Hover auf Signal-Olive.",
+      "html": "<button class=\"ds-btn-outline\">Portfolio ansehen</button>",
+      "css": ".ds-btn-outline { display:inline-flex; align-items:center; gap:.5rem; background:transparent; color:#edeae3; padding:14px 32px; border:1px solid rgba(188,200,87,0.28); border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:.75rem; font-weight:400; text-transform:uppercase; letter-spacing:.2em; cursor:pointer; transition:color .3s, border-color .3s; } .ds-btn-outline:hover { color:#bcc857; border-color:#bcc857; } .ds-btn-outline:focus-visible { outline:2px solid #bcc857; outline-offset:3px; }"
+    },
+    {
+      "name": "Service Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Auswahl-Pille (Leistung wählen) im Kontaktformular. Toggle zwischen Outline und Olive-Fill.",
+      "html": "<div style=\"display:flex;gap:10px\"><button class=\"ds-chip\" aria-pressed=\"false\">Lackschutz</button><button class=\"ds-chip ds-chip--selected\" aria-pressed=\"true\">Carwrapping</button></div>",
+      "css": ".ds-chip { background:transparent; color:#b7b3a8; padding:8px 16px; border:1px solid rgba(188,200,87,0.28); border-radius:9999px; font-family:Inter,system-ui,sans-serif; font-size:.875rem; cursor:pointer; transition:color .2s, border-color .2s, background .2s; } .ds-chip:hover { color:#edeae3; border-color:#bcc857; } .ds-chip--selected { background:#5a6305; border-color:#5a6305; color:#f2f0e6; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Text-/Textarea-Feld im Kontaktformular. Dunkel-transparenter Grund, Signal-Olive-Focus.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Dein Name\" />",
+      "css": ".ds-input { width:100%; background:rgba(255,255,255,0.03); color:#edeae3; padding:12px 16px; border:1px solid rgba(188,200,87,0.28); border-radius:12px; font-family:Inter,system-ui,sans-serif; font-size:1rem; transition:border-color .2s, box-shadow .2s; } .ds-input::placeholder { color:rgba(183,179,168,0.5); } .ds-input:focus { outline:none; border-color:#bcc857; box-shadow:0 0 0 1px #bcc857; }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "Weit gesperrter Olive-Kicker über Sektions-Überschriften und Form-Legends.",
+      "html": "<p class=\"ds-eyebrow\">Leistungen</p>",
+      "css": ".ds-eyebrow { font-family:Inter,system-ui,sans-serif; font-weight:500; font-size:.72rem; letter-spacing:.42em; text-transform:uppercase; color:#bcc857; margin:0; }"
+    },
+    {
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Die einzige helle Karte: Google-Rezension, tritt mit weichem Drop aus der Noir-Bühne heraus.",
+      "html": "<figure class=\"ds-review\"><blockquote>Für mich die beste Anlaufstelle für Fahrzeugfolierung in Münster und Umgebung.</blockquote><figcaption>Felix Schröter · ★★★★★</figcaption></figure>",
+      "css": ".ds-review { max-width:480px; margin:0; background:#faf9f6; color:#3c4043; padding:28px; border-radius:16px; box-shadow:0 40px 80px -30px rgba(0,0,0,0.75); } .ds-review blockquote { margin:0; font-family:Inter,system-ui,sans-serif; font-size:1rem; line-height:1.6; } .ds-review figcaption { margin-top:14px; font-size:.85rem; color:#5f6368; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Das Studio bei Nacht",
+    "overview": "Die Seite ist ein abgedunkeltes Werkstatt-Studio nach Feierabend: tiefes Noir-Schwarz als Bühne, ein einziger Lichtkegel, und das folierte Fahrzeug als Hauptdarsteller. Alle Wärme und Energie kommen aus einem einzigen Olive-Akzent, getragen von Kino-Korn, weichen Glows und langsamen, exponentiell ausklingenden Übergängen. Hochwertigkeit entsteht aus Ruhe, Schwarz-Raum und Präzision, nicht aus Effekt-Lärm. Playfair-Display-Serifen für die großen Aussagen, Inter in leichtem Gewicht für den Fließtext. Conversion ist eingebaut, nicht angeklebt.",
+    "keyCharacteristics": [
+      "Noir-Bühne, ein Olive-Akzent, alles andere Neutral.",
+      "Serif-Display (Playfair) gegen Sans-Body (Inter) auf klarer Kontrast-Achse.",
+      "Flach + tonal: Tiefe durch Licht, Korn und Layering statt harter Schatten.",
+      "Pill-Geometrie für Aktionen; großzügiger Schwarz-Raum.",
+      "Langsame, exponentiell ausklingende Bewegung; prefers-reduced-motion ist Pflicht."
+    ],
+    "rules": [
+      { "name": "The One-Voice Rule", "body": "Olive ist die einzige Akzentfarbe. Keine zweite Marken-Farbe, kein Zwei-Ton-Verlauf. Flächen tragen #5a6305, Text trägt #bcc857; die Trennung ist Absicht.", "section": "colors" },
+      { "name": "The Playfair-or-Inter Rule", "body": "Headlines immer Playfair, Body/UI immer Inter. Die übrigen geladenen Schriften sind Varianten-Optionen und gehören nicht ins finale Design.", "section": "typography" },
+      { "name": "The Light-Not-Shadow Rule", "body": "Tiefe wird mit Licht, Glow und Korn erzeugt, nicht mit dunklen Box-Shadows auf jeder Karte. Karten sind flach mit line-Haarlinie; Schatten ist die Ausnahme für echt schwebende Elemente.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do Noir als Bühne lassen und Olive als einzige Akzentstimme einsetzen: Flächen #5a6305, Text #bcc857.",
+      "Do Headlines in Playfair, Body/UI in Inter setzen — nie mischen, nie eine dritte Schrift.",
+      "Do Fließtext mind. 4.5:1 gegen Noir halten; Paper-Dim ist die Untergrenze. Zeilenlänge 65–75ch.",
+      "Do Tiefe mit Licht, Glow und Film-Korn erzeugen, Karten flach mit line-Haarlinie halten.",
+      "Do Pille-Geometrie für Aktionen; sichtbarer Olive-Focus-Ring auf allem Interaktiven.",
+      "Do jede Bewegung exponentiell ausklingen lassen und eine reduced-motion-Alternative liefern."
+    ],
+    "donts": [
+      "Don't die Seite billig oder überladen wirken lassen — keine grellen Rabatt-Banner, keine Stockfoto-Tuning-Optik, kein Clipart.",
+      "Don't in den generischen SaaS-/Template-Look verfallen — keine gleichförmigen Icon-Karten-Raster, keine Hero-Metric-Schablone.",
+      "Don't kalt/steril/corporate werden — Wärme kommt aus Olive, Playfair und echter Arbeit.",
+      "Don't AI-Tells verwenden: kein Gradient-Text, keine dekorative Glasmorphie als Default, keine Seitenstreifen-Border > 1px.",
+      "Don't eine zweite Akzentfarbe oder einen Zwei-Ton-Verlauf einführen.",
+      "Don't Headlines clampen, bis Wörter überlaufen — Hero-Copy auf jedem Breakpoint testen."
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import {
   Anton,
-  Playfair_Display,
+  Marcellus,
   Montserrat,
   Sora,
   Bebas_Neue,
@@ -16,7 +16,10 @@ import { SmoothScroll } from '@/components/motion/SmoothScroll';
 import { site } from '@/lib/site';
 
 const anton = Anton({ subsets: ['latin'], weight: '400', variable: '--font-anton', display: 'swap' });
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400', '500', '600'], variable: '--font-playfair', display: 'swap' });
+// Display-Schrift: Marcellus (klassische Capitalis, ersetzt Playfair).
+// Über next/font/google → zur Build-Zeit selbst gehostet, keine Laufzeit-
+// Anfrage an Google (DSGVO-konform). Single weight 400.
+const marcellus = Marcellus({ subsets: ['latin'], weight: '400', variable: '--font-marcellus', display: 'swap' });
 const montserrat = Montserrat({ subsets: ['latin'], weight: ['400', '600', '700', '800'], variable: '--font-montserrat', display: 'swap' });
 const sora = Sora({ subsets: ['latin'], weight: ['400', '600', '700', '800'], variable: '--font-sora', display: 'swap' });
 const bebas = Bebas_Neue({ subsets: ['latin'], weight: '400', variable: '--font-bebas', display: 'swap' });
@@ -27,7 +30,7 @@ const robotoCond = Roboto_Condensed({ subsets: ['latin'], weight: ['400', '700']
 
 const fontVars = [
   anton.variable,
-  playfair.variable,
+  marcellus.variable,
   montserrat.variable,
   sora.variable,
   bebas.variable,

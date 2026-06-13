@@ -82,15 +82,6 @@ export function Leistungen() {
       <div aria-hidden="true" className="hero-grain absolute inset-0" />
 
       <div className="relative wrap">
-        <motion.p
-          variants={reveal}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, amount: 0.6 }}
-          className="eyebrow"
-        >
-          Leistungen
-        </motion.p>
         <motion.h2
           variants={reveal}
           initial="hidden"
@@ -126,16 +117,13 @@ export function Leistungen() {
               >
                 <Scene active={isActive} img={s.img} alt={s.name} />
 
-                {/* Eingeklappt: Icon oben + vertikaler Name */}
+                {/* Eingeklappt: vertikaler Name */}
                 <div
-                  className={`absolute inset-0 flex flex-col items-center transition-opacity duration-300 ${
+                  className={`absolute inset-0 flex flex-col items-center justify-end transition-opacity duration-300 ${
                     isActive ? 'pointer-events-none opacity-0' : 'opacity-100'
                   }`}
                 >
-                  <span className="mt-5 text-xl" aria-hidden="true">
-                    {s.icon}
-                  </span>
-                  <span className="mt-auto mb-6 font-playfair text-xl tracking-wide text-paper-dim [writing-mode:vertical-rl] rotate-180">
+                  <span className="mb-6 font-playfair text-xl tracking-wide text-paper-dim [writing-mode:vertical-rl] rotate-180">
                     {s.name}
                   </span>
                 </div>
@@ -147,8 +135,7 @@ export function Leistungen() {
                   }`}
                 >
                   <div className="absolute inset-x-7 bottom-7">
-                    <h3 className="flex items-center gap-3 font-playfair text-[clamp(1.6rem,2.5vw,2.4rem)] text-paper">
-                      <span aria-hidden="true">{s.icon}</span>
+                    <h3 className="font-playfair text-[clamp(1.6rem,2.5vw,2.4rem)] text-paper">
                       {s.name}
                     </h3>
                     <p className="mt-3 max-w-md text-[0.95rem] font-light leading-relaxed text-[#e7e4da]">
@@ -182,9 +169,6 @@ export function Leistungen() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center gap-4 px-5 py-4 text-left"
                 >
-                  <span className="text-xl" aria-hidden="true">
-                    {s.icon}
-                  </span>
                   <span className="font-playfair text-xl text-paper">{s.name}</span>
                   <span
                     className={`ml-auto text-olive-bright transition-transform duration-300 ${

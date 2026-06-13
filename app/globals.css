@@ -44,7 +44,9 @@ body {
 }
 
 @layer components {
-  .wrap {
+  .wrap,
+  /* Legacy-Alias: in CookieBanner / Legal-Seiten verwendet. */
+  .container-content {
     width: 100%;
     max-width: 1240px;
     margin-inline: auto;

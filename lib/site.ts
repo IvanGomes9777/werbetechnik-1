@@ -31,6 +31,12 @@ export const site = {
     value: 5.0,
     count: 1,
     source: 'Google',
+    // Link zum Abgeben einer Google-Bewertung.
+    // Funktioniert sofort (öffnet das Unternehmensprofil mit „Rezension schreiben").
+    // BEVORZUGT: sobald die Google Place-ID bekannt ist, direkt das Bewertungs-
+    // fenster öffnen: https://search.google.com/local/writereview?placeid=PLACE_ID
+    reviewUrl:
+      'https://www.google.com/maps/search/?api=1&query=GV+Werbetechnik+Loddenheide+39+M%C3%BCnster',
   },
   url: 'https://www.gv-werbetechnik.de',
   legal: {
@@ -50,8 +56,10 @@ export const reviews = [
 
 export const navLinks = [
   { label: 'Studio', href: '#studio' },
-  { label: 'Finishes', href: '#finishes' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Leistungen', href: '#leistungen' },
+  { label: 'Ergebnisse', href: '#ergebnisse' },
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Standort', href: '#standort' },
+  { label: 'Bewertungen', href: '#rezension' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const;
