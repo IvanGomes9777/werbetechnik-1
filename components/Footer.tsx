@@ -45,8 +45,6 @@ export function Footer() {
             </p>
             <a
               href={site.instagram.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 text-sm text-paper-dim transition-colors hover:text-paper"
             >
               <InstagramIcon className="h-[18px] w-[18px] text-olive-bright" />

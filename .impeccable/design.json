@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-06-13T18:35:00Z",
-  "title": "Design System: GV Werbetechnik",
+  "title": "Design System: Muster Werbetechnik",
   "extensions": {
     "colorMeta": {
       "olive": {
@@ -103,7 +103,7 @@
       "kind": "card",
       "refersTo": "card",
       "description": "Die einzige helle Karte: Google-Rezension, tritt mit weichem Drop aus der Noir-Bühne heraus.",
-      "html": "<figure class=\"ds-review\"><blockquote>Für mich die beste Anlaufstelle für Fahrzeugfolierung in Münster und Umgebung.</blockquote><figcaption>Felix Schröter · ★★★★★</figcaption></figure>",
+      "html": "<figure class=\"ds-review\"><blockquote>Für mich die beste Anlaufstelle für Fahrzeugfolierung in Münster und Umgebung.</blockquote><figcaption>Erika Mustermann · ★★★★★</figcaption></figure>",
       "css": ".ds-review { max-width:480px; margin:0; background:#faf9f6; color:#3c4043; padding:28px; border-radius:16px; box-shadow:0 40px 80px -30px rgba(0,0,0,0.75); } .ds-review blockquote { margin:0; font-family:Inter,system-ui,sans-serif; font-size:1rem; line-height:1.6; } .ds-review figcaption { margin-top:14px; font-size:.85rem; color:#5f6368; }"
     }
   ],

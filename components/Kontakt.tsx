@@ -63,7 +63,6 @@ export function Kontakt() {
   const [state, formAction] = useFormState(submitContact, initialState);
   const [leistung, setLeistung] = useState('');
   const isVehicle = VEHICLE_LEISTUNGEN.has(leistung);
-  const waNumber = site.phoneHref.replace(/\D/g, '');
 
   return (
     <section
@@ -113,9 +112,7 @@ export function Kontakt() {
             Anrufen
           </a>
           <a
-            href={`https://wa.me/${waNumber}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
             className="inline-flex items-center gap-2.5 rounded-full border border-line px-5 py-3 text-[0.95rem] font-medium text-paper transition-colors hover:border-olive-bright hover:text-paper"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />
@@ -123,8 +120,6 @@ export function Kontakt() {
           </a>
           <a
             href={site.instagram.url}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full border border-line px-5 py-3 text-[0.95rem] font-medium text-paper transition-colors hover:border-olive-bright"
           >
             <InstagramIcon className="h-[18px] w-[18px] text-olive-bright" />

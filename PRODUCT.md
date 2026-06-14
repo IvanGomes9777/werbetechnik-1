@@ -10,7 +10,7 @@ Fahrzeughalter und Unternehmen aus Münster und Umgebung, die ihr Auto folieren 
 
 ## Product Purpose
 
-Marketing-One-Pager für GV Werbetechnik, der den handwerklichen Anspruch und die Detailpräzision des Betriebs sichtbar macht und Besucher in Anfragen (Anruf, WhatsApp, Formular) umwandelt. Erfolg = qualifizierte Kontaktaufnahmen. Die Seite verkauft Vertrauen und Können, nicht Preis; sie soll sich anfühlen wie ein hochwertiges Studio bei Nacht, nicht wie ein Discount-Tuning-Anbieter.
+Marketing-One-Pager für Muster Werbetechnik, der den handwerklichen Anspruch und die Detailpräzision des Betriebs sichtbar macht und Besucher in Anfragen (Anruf, WhatsApp, Formular) umwandelt. Erfolg = qualifizierte Kontaktaufnahmen. Die Seite verkauft Vertrauen und Können, nicht Preis; sie soll sich anfühlen wie ein hochwertiges Studio bei Nacht, nicht wie ein Discount-Tuning-Anbieter.
 
 ## Brand Personality
 

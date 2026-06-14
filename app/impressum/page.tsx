@@ -4,7 +4,7 @@ import { site } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Impressum',
-  description: 'Impressum und Anbieterkennzeichnung von GV Werbetechnik, Münster.',
+  description: 'Impressum und Anbieterkennzeichnung von Muster Werbetechnik, Münster.',
   robots: { index: true, follow: false },
 };
 

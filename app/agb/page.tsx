@@ -4,7 +4,7 @@ import { LegalLayout, LegalSection } from '@/components/LegalLayout';
 export const metadata: Metadata = {
   title: 'AGB',
   description:
-    'Allgemeine Geschäftsbedingungen von GV Werbetechnik — Folierung, Verarbeitung, Haftung und Entfernbarkeit.',
+    'Allgemeine Geschäftsbedingungen von Muster Werbetechnik — Folierung, Verarbeitung, Haftung und Entfernbarkeit.',
   robots: { index: true, follow: false },
 };
 
@@ -20,7 +20,7 @@ export default function AgbPage() {
       <LegalSection heading="1. Geltungsbereich">
         <p>
           Diese Bedingungen gelten für alle Leistungen der Fahrzeugfolierung und
-          Werbebeschriftung von GV Werbetechnik gegenüber Verbrauchern und
+          Werbebeschriftung von Muster Werbetechnik gegenüber Verbrauchern und
           Unternehmern.
         </p>
       </LegalSection>

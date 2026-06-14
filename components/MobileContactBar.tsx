@@ -24,8 +24,6 @@ function WhatsAppIcon({ className }: { className?: string }) {
  * Liegt unter dem Cookie-Banner (z-[70]), wird also verdeckt, solange dieses sichtbar ist.
  */
 export function MobileContactBar() {
-  const waNumber = site.phoneHref.replace(/\D/g, '');
-
   return (
     <div className="fixed inset-x-0 bottom-0 z-[60] grid grid-cols-2 border-t border-line bg-noir/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md xl:hidden">
       <a
@@ -37,9 +35,7 @@ export function MobileContactBar() {
         Anrufen
       </a>
       <a
-        href={`https://wa.me/${waNumber}`}
-        target="_blank"
-        rel="noopener noreferrer"
+        href="#"
         aria-label="Kontakt über WhatsApp"
         className="flex items-center justify-center gap-2.5 py-3.5 text-sm font-medium text-paper transition-colors hover:text-white"
       >

@@ -6,7 +6,7 @@ p1_count: 2
 timestamp: 2026-06-13T19-10-03Z
 slug: app-page-tsx-landing-page
 ---
-# Critique — Landing Page (GV Werbetechnik)
+# Critique — Landing Page (Muster Werbetechnik)
 
 ## Design Health Score
 

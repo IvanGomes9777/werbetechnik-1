@@ -1,7 +1,11 @@
-# GV Werbetechnik — Website
+# Muster Werbetechnik — Website (Demo)
 
-Premium-Dark-Luxury Website für die Fahrzeugfolierung **GV Werbetechnik** in
+Premium-Dark-Luxury Website für die Fahrzeugfolierung **Muster Werbetechnik** in
 Münster. Cinematic, edel, understated — „Studio bei Nacht“.
+
+> Hinweis: Alle Firmendaten (Name, Logo, Kontakt, Instagram, Bewertung) sind
+> **Beispiel-/Demo-Platzhalter** und führen bewusst nirgendwohin. Standort
+> Münster bleibt. Vor Live-Schaltung durch echte Kundendaten ersetzen.
 
 ## Tech-Stack
 

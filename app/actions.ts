@@ -43,7 +43,7 @@ export async function submitContact(
   }
 
   // TODO: Mailversand anbinden (z.B. Resend). Vorerst Konsolen-Log.
-  console.log('[Kontaktanfrage GV Werbetechnik]', {
+  console.log('[Kontaktanfrage Muster Werbetechnik]', {
     name,
     email,
     leistung,

@@ -167,8 +167,6 @@ export function Rezension() {
         >
           <a
             href={site.rating.reviewUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 rounded-full bg-paper px-6 py-3 text-[0.95rem] font-medium text-noir shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] ring-1 ring-white/10 transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#5a6305]"
           >
             <GoogleG className="h-5 w-5" />

@@ -14,8 +14,8 @@ import {
  * Vollflächiges Hintergrundbild mit Scroll-Parallax, zentrierte Headline
  * mit Oliv-Outline, Glas-Statband (gestaffelter Entrance).
  *
- * TODO: Hintergrundbild von Ivan einsetzen — Datei als /public/studio-bg.jpg
- * ablegen und unten den <img>-Slot aktivieren. Bis dahin CSS-Platzhalter.
+ * Hinweis: Hintergrundbild als /public/studio-bg.jpg ablegen und unten den
+ * <img>-Slot nutzen. Aktuell Beispiel-/Platzhalterbild.
  */
 
 const stats = [
@@ -68,7 +68,7 @@ export function Studio() {
     <section
       id="studio"
       ref={ref}
-      aria-label="Studio — über GV Werbetechnik"
+      aria-label="Studio — über Muster Werbetechnik"
       className="relative flex min-h-[100dvh] flex-col items-center justify-center overflow-hidden"
     >
       {/* ---- Hintergrundbild (Parallax) ---- */}

@@ -1,12 +1,13 @@
-# TODO — offene Kundendaten & Aufgaben (GV Werbetechnik)
+# TODO — offene Kundendaten & Aufgaben (Demo)
 
-Diese Liste sammelt alle Platzhalter (`BEISPIEL` / `TODO` im Code), damit
-Ivan die echten Daten nachträgt. Die verifizierten Kundendaten sind bereits
-eingepflegt (`lib/site.ts`).
+Diese Liste sammelt alle Platzhalter (`BEISPIEL` / `TODO` im Code). Aktuell
+sind in `lib/site.ts` ausschließlich **Beispiel-/Demo-Daten** hinterlegt
+(Name, Logo, Kontakt, Instagram, Bewertung führen bewusst nirgendwohin).
+Standort Münster bleibt. Vor Live-Schaltung durch echte Kundendaten ersetzen.
 
 ## 🔴 Kundendaten ergänzen / bestätigen
 
-- [ ] **E-Mail-Adresse** bestätigen — aktuell Beispiel `kontakt@gv-werbetechnik.de`
+- [ ] **E-Mail-Adresse** bestätigen — aktuell Beispiel `kontakt@muster-werbetechnik.de`
       (`lib/site.ts`, Kontakt, Impressum, Datenschutz).
 - [ ] **Inhaber (Impressum)** ergänzen — `lib/site.ts` → `legal.owner`.
 - [ ] **USt-IdNr. (Impressum)** ergänzen — `lib/site.ts` → `legal.vatId`.
@@ -15,19 +16,19 @@ eingepflegt (`lib/site.ts`).
 
 ## 🖼️ Medien
 
-- [ ] **Hero-Video** von Ivan einsetzen — Slot in `components/Hero.tsx`
-      (`{/* TODO: Hero-Video von Ivan einsetzen */}`). Container ist bereits
+- [ ] **Hero-Video** als Demo einsetzen — Slot in `components/Hero.tsx`
+      (`{/* TODO: Hero-Video als Demo einsetzen */}`). Container ist bereits
       auf `object-fit: cover` vorbereitet; aktuell Satin-Licht-Sweep (CSS).
 - [ ] **Vorher/Nachher-Fotos** (Section „Ergebnisse"):
       - **Fahrzeug** = KI-generiertes Paar (`public/showcase/gt3rs-{vorher,nachher}.webp`,
         weißer GT3 RS → satin-schwarz foliert). Bei Bedarf durch echte Aufnahme ersetzen.
       - **Lichtwerbung** = echtes Vorher-Foto + **KI-generiertes Nachher**
-        (`lichtwerbung-nachher.webp`, beleuchtete „GV WERBETECHNIK"-Fassade).
+        (`lichtwerbung-nachher.webp`, beleuchtete „MUSTER WERBETECHNIK"-Fassade).
         Bei Bedarf durch echtes Referenzprojekt ersetzen.
       - **Objektbeschriftung** = KI-generiertes Paar (`objekt-{vorher,nachher}.webp`,
-        leeres Schaufenster → mit „GV WERBETECHNIK"-Folienbeschriftung).
+        leeres Schaufenster → mit „MUSTER WERBETECHNIK"-Folienbeschriftung).
       - **Schilder & Werbung** = KI-generiertes Paar (`schild-{vorher,nachher}.webp`,
-        Eingang ohne Schild → mit montiertem „GV WERBETECHNIK"-Firmenschild).
+        Eingang ohne Schild → mit montiertem „MUSTER WERBETECHNIK"-Firmenschild).
       - Alle 4 Szenen haben jetzt Vorher/Nachher-Bilder; Fahrzeug/Lichtwerbung/
         Objekt/Schild sind KI-generiert → bei Bedarf durch echte Projekte ersetzen.
       - DSGVO: sichtbare Kennzeichen (GT3 RS) ggf. unkenntlich machen.
@@ -41,7 +42,7 @@ eingepflegt (`lib/site.ts`).
       mit ISR-Caching + Fallback auf die aktuelle Karte.
       Benötigt: `GOOGLE_PLACE_ID` + `GOOGLE_PLACES_API_KEY` (Billing aktiv) als
       Env-Variablen. Optional: nur ≥ 4 Sterne filtern. Aktuell: 1 feste Karte
-      (Felix Schröter) aus `lib/site.ts`.
+      (Erika Mustermann) aus `lib/site.ts`.
 - [ ] **Portfolio** (Cinematic Filmstrip, `components/Portfolio.tsx`) — aktuell
       rechtssichere CSS-Platzhalter-Kacheln (`portfolio` in `lib/content.ts`).
       Durch echte GV-Projektfotos ersetzen.

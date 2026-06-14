@@ -1,5 +1,5 @@
 ---
-name: GV Werbetechnik
+name: Muster Werbetechnik
 description: Premium-Dark-Luxury One-Pager für Fahrzeugfolierung & Werbetechnik in Münster — „Das Studio bei Nacht".
 colors:
   noir: "#08090b"
@@ -77,7 +77,7 @@ components:
     padding: "12px 16px"
 ---
 
-# Design System: GV Werbetechnik
+# Design System: Muster Werbetechnik
 
 ## 1. Overview
 
