@@ -45,8 +45,7 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#cdd56e',
     surface:
       'radial-gradient(60% 45% at 50% 42%, rgba(205,213,110,0.55), rgba(90,99,5,0.12) 60%, transparent 72%), linear-gradient(180deg,#15170f,#0b0c08)',
-    beforeImg: '/showcase/lichtwerbung-vorher.webp',
-    afterImg: '/showcase/lichtwerbung-nachher.webp',
+    // Platzhalter (CSS-Szene) – Beispielbilder bewusst entfernt
   },
   {
     id: 'objekt',
@@ -55,8 +54,7 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#9fb0c4',
     surface:
       'linear-gradient(125deg, rgba(255,255,255,0.10) 0 2px, transparent 2px 9px), radial-gradient(90% 70% at 30% 20%, rgba(159,176,196,0.22), transparent 60%), linear-gradient(160deg,#1b1f24,#0c0e10)',
-    beforeImg: '/showcase/objekt-vorher.webp',
-    afterImg: '/showcase/objekt-nachher.webp',
+    // Platzhalter (CSS-Szene) – Beispielbilder bewusst entfernt
   },
   {
     id: 'schild',
@@ -65,8 +63,7 @@ export const showcaseScenes: ShowcaseScene[] = [
     accent: '#bcc857',
     surface:
       'radial-gradient(100% 80% at 50% 30%, rgba(188,200,87,0.20), transparent 58%), linear-gradient(155deg,#22251a,#101209)',
-    beforeImg: '/showcase/schild-vorher.webp',
-    afterImg: '/showcase/schild-nachher.webp',
+    // Platzhalter (CSS-Szene) – Beispielbilder bewusst entfernt
   },
 ];
 
@@ -193,19 +190,19 @@ export const leistungen: {
     id: 'lichtwerbung',
     name: 'Lichtwerbung',
     desc: 'Beleuchtete Schriftzüge, die deinen Betrieb auch im Dunkeln eindrucksvoll in Szene setzen.',
-    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
+    img: '/leistungen/lichtwerbung.jpg',
   },
   {
     id: 'schilder',
     name: 'Schilder',
     desc: 'Stabile Schilder für Eingang, Gelände und Wegeleitung.',
-    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
+    img: '/leistungen/schilder.jpg',
   },
   {
     id: 'objektbeschriftung',
     name: 'Objektbeschriftung',
     desc: 'Beschriftung für Gebäude, Fassaden, Fenster und Flächen.',
-    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
+    img: '/leistungen/objektbeschriftung.jpg',
   },
 ];
 
