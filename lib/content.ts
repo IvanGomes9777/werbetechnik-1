@@ -1,6 +1,6 @@
 /**
- * Geteilte Inhalte für alle Design-Varianten — überall mit den echten
- * Kundendaten von GV Werbetechnik (siehe lib/site.ts).
+ * Geteilte Inhalte für alle Design-Varianten — mit Beispiel-/Demo-Daten
+ * (siehe lib/site.ts).
  * Preise sind BEISPIEL-PREISE und als solche gekennzeichnet
  * (Endpreis nach kostenloser Begutachtung).
  */
@@ -77,9 +77,9 @@ export const services = [
 ];
 
 /**
- * Leistungen von GV Werbetechnik (echt).
- * Hinweis: Die Bilder (img) sind KI-generierte Platzhalter im Marken-Look —
- * bei Bedarf später durch echte GV-Fotos ersetzen.
+ * Leistungen (Demo).
+ * Hinweis: Die Bilder (img) sind Platzhalter im Marken-Look —
+ * bei Bedarf später durch echte Fotos ersetzen.
  */
 export const leistungen: {
   id: string;
@@ -114,21 +114,21 @@ export const leistungen: {
     icon: '💡',
     name: 'Lichtwerbung',
     desc: 'Beleuchtete Schriftzüge, die deinen Betrieb auch im Dunkeln eindrucksvoll in Szene setzen.',
-    img: '/leistungen/lichtwerbung.jpg',
+    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
   },
   {
     id: 'schilder',
     icon: '🪧',
     name: 'Schilder',
     desc: 'Stabile Schilder für Eingang, Gelände und Wegeleitung.',
-    img: '/leistungen/schilder.jpg',
+    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
   },
   {
     id: 'objektbeschriftung',
     icon: '🏢',
     name: 'Objektbeschriftung',
     desc: 'Beschriftung für Gebäude, Fassaden, Fenster und Flächen.',
-    img: '/leistungen/objektbeschriftung.jpg',
+    // Platzhalter (CSS-Szene) – Beispielbild bewusst entfernt
   },
 ];
 
@@ -151,7 +151,7 @@ export const trustPoints = [
 export const materialPartners = ['3M', 'Avery Dennison', 'KPMF', 'Hexis', 'Oracal'];
 
 /** Galerie-Platzhalter (rechtssichere CSS-Kompositionen, 16:10).
- *  BEISPIEL – durch echte GV-Aufnahmen ersetzen, Kennzeichen unkenntlich machen. */
+ *  BEISPIEL – durch echte Aufnahmen ersetzen, Kennzeichen unkenntlich machen. */
 export const gallery = [
   { finish: 'Matt', vehicle: 'Sportlimousine', g: 'linear-gradient(135deg,#1c1c1c,#0a0a0a 60%,#202020)' },
   { finish: 'Satin', vehicle: 'SUV', g: 'linear-gradient(135deg,#34302a,#14120f 65%,#3a352d)' },

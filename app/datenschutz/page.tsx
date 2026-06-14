@@ -5,7 +5,7 @@ import { site } from '@/lib/site';
 export const metadata: Metadata = {
   title: 'Datenschutz',
   description:
-    'Datenschutzerklärung von GV Werbetechnik gemäß DSGVO — inkl. Hinweise zu Foto-Uploads und Galeriebildern.',
+    'Datenschutzerklärung von Muster Werbetechnik gemäß DSGVO — inkl. Hinweise zu Foto-Uploads und Galeriebildern.',
   robots: { index: true, follow: false },
 };
 

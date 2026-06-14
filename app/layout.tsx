@@ -40,8 +40,8 @@ const fontVars = [
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: 'Fahrzeugfolierung Münster | GV Werbetechnik',
-    template: '%s | GV Werbetechnik',
+    default: 'Fahrzeugfolierung Münster | Muster Werbetechnik',
+    template: '%s | Muster Werbetechnik',
   },
   description:
     'Premium-Fahrzeugfolierung in Münster. Vollfolierung, Farbwechsel, Lackschutzfolie (PPF), Chrome-Delete & Werbebeschriftung — werterhaltend, rückstandslos entfernbar.',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     locale: 'de_DE',
     url: site.url,
     siteName: site.name,
-    title: 'Fahrzeugfolierung Münster | GV Werbetechnik',
+    title: 'Fahrzeugfolierung Münster | Muster Werbetechnik',
     description:
       'Premium-Folierung & Farbwechsel — werterhaltend, rückstandslos entfernbar. Studio in Münster.',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],

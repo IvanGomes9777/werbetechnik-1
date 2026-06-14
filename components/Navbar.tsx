@@ -49,11 +49,11 @@ export function Navbar() {
       >
         <a
           href="#top"
-          aria-label="GV Werbetechnik — Startseite"
+          aria-label="Muster Werbetechnik — Startseite"
           className="group flex items-baseline gap-2"
         >
           <span className="font-playfair text-[1.4rem] tracking-[0.18em] text-[var(--olive-bright)]">
-            GV
+            MW
           </span>
           <span className="hidden text-[0.6rem] uppercase tracking-[0.32em] text-paper-dim sm:inline">
             Werbetechnik · Münster

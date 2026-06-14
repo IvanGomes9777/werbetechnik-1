@@ -1,12 +1,13 @@
-# TODO — offene Kundendaten & Aufgaben (GV Werbetechnik)
+# TODO — offene Kundendaten & Aufgaben (Demo)
 
-Diese Liste sammelt alle Platzhalter (`BEISPIEL` / `TODO` im Code), damit
-Ivan die echten Daten nachträgt. Die verifizierten Kundendaten sind bereits
-eingepflegt (`lib/site.ts`).
+Diese Liste sammelt alle Platzhalter (`BEISPIEL` / `TODO` im Code). Aktuell
+sind in `lib/site.ts` ausschließlich **Beispiel-/Demo-Daten** hinterlegt
+(Name, Logo, Kontakt, Instagram, Bewertung führen bewusst nirgendwohin).
+Standort Münster bleibt. Vor Live-Schaltung durch echte Kundendaten ersetzen.
 
 ## 🔴 Kundendaten ergänzen / bestätigen
 
-- [ ] **E-Mail-Adresse** bestätigen — aktuell Beispiel `kontakt@gv-werbetechnik.de`
+- [ ] **E-Mail-Adresse** bestätigen — aktuell Beispiel `kontakt@muster-werbetechnik.de`
       (`lib/site.ts`, Kontakt, Impressum, Datenschutz).
 - [ ] **Inhaber (Impressum)** ergänzen — `lib/site.ts` → `legal.owner`.
 - [ ] **USt-IdNr. (Impressum)** ergänzen — `lib/site.ts` → `legal.vatId`.
