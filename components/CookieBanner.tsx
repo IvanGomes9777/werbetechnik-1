@@ -75,7 +75,7 @@ export function CookieBanner() {
                 onClick={() =>
                   save({ maps: true, social: true, analytics: true })
                 }
-                className="rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-noir transition-colors hover:bg-gold-soft"
+                className="rounded-full border border-line px-5 py-2.5 text-sm text-paper transition-colors hover:border-gold hover:text-gold"
               >
                 Alle akzeptieren
               </button>

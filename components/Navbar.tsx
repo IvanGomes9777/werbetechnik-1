@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react';
 
 const links = [
   { label: 'Studio', href: '#studio' },
-  { label: 'Finishes', href: '#finishes' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Leistungen', href: '#leistungen' },
+  { label: 'Ergebnisse', href: '#ergebnisse' },
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Standort', href: '#standort' },
+  { label: 'Bewertungen', href: '#rezension' },
   { label: 'Kontakt', href: '#kontakt' },
 ];
 
@@ -37,7 +39,7 @@ export function Navbar() {
   return (
     <>
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[100] transition-colors duration-500 ${
         scrolled || open
           ? 'border-b border-[var(--line)] bg-[rgba(8,9,11,0.85)] backdrop-blur-md'
           : 'border-b border-transparent bg-gradient-to-b from-black/55 to-transparent'
@@ -60,8 +62,8 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
-          <ul className="flex items-center gap-7">
+        <div className="hidden items-center gap-6 lg:flex">
+          <ul className="flex items-center gap-6">
             {links.map((l) => (
               <li key={l.href}>
                 <a
@@ -75,7 +77,7 @@ export function Navbar() {
           </ul>
           <a
             href="#kontakt"
-            className="border border-[var(--line)] px-5 py-2 text-xs uppercase tracking-[0.18em] text-paper transition-colors hover:border-[var(--olive-bright)] hover:text-[var(--olive-bright)]"
+            className="hidden border border-[var(--line)] px-5 py-2 text-xs uppercase tracking-[0.18em] text-paper transition-colors hover:border-[var(--olive-bright)] hover:text-[var(--olive-bright)] xl:inline-block"
           >
             Beratung anfragen
           </a>
@@ -99,17 +101,19 @@ export function Navbar() {
       <div
         id="mobile-menu"
         hidden={!open}
-        className={`fixed inset-0 z-[45] flex flex-col bg-noir transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-[95] overflow-y-auto bg-noir transition-opacity duration-300 lg:hidden ${
           open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
         }`}
       >
-        <div className="wrap flex flex-1 flex-col justify-center gap-1 py-24">
+        {/* min-h-full + justify-center: zentriert bei genug Platz, scrollt sonst
+            (alle Links bleiben erreichbar). pt klärt die fixierte Navbar. */}
+        <div className="wrap flex min-h-full flex-col justify-center gap-1 pb-12 pt-28">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="border-b border-[var(--line)] py-5 font-playfair text-3xl text-paper transition-colors hover:text-[var(--olive-bright)]"
+              className="border-b border-[var(--line)] py-4 font-playfair text-[1.75rem] text-paper transition-colors hover:text-[var(--olive-bright)]"
             >
               {l.label}
             </a>

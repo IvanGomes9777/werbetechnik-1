@@ -149,6 +149,18 @@ export function Hero() {
                 Portfolio ansehen <span aria-hidden="true">↓</span>
               </a>
             </motion.div>
+            <motion.p
+              variants={item}
+              className="mt-5 text-sm text-paper-dim"
+            >
+              oder direkt:{' '}
+              <a
+                href={site.phoneHref}
+                className="font-medium text-paper underline-offset-4 transition-colors hover:text-olive-bright hover:underline"
+              >
+                {site.phone}
+              </a>
+            </motion.p>
           </div>
 
           <motion.p

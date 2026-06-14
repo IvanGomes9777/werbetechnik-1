@@ -15,9 +15,10 @@ export async function submitContact(
   formData: FormData,
 ): Promise<ContactState> {
   const name = String(formData.get('name') ?? '').trim();
+  const email = String(formData.get('email') ?? '').trim();
+  const leistung = String(formData.get('leistung') ?? '').trim();
   const vehicle = String(formData.get('vehicle') ?? '').trim();
-  const finish = String(formData.get('finish') ?? '').trim();
-  const scope = String(formData.get('scope') ?? '').trim();
+  const phone = String(formData.get('phone') ?? '').trim();
   const message = String(formData.get('message') ?? '').trim();
   // Honeypot gegen Bots
   const trap = String(formData.get('company') ?? '').trim();
@@ -26,19 +27,28 @@ export async function submitContact(
     return { status: 'success', message: 'Danke für deine Anfrage.' };
   }
 
-  if (!name || !message) {
+  if (!name || !email || !message) {
     return {
       status: 'error',
-      message: 'Bitte Name und Nachricht ausfüllen.',
+      message: 'Bitte Name, E-Mail und Nachricht ausfüllen.',
+    };
+  }
+
+  // Einfache E-Mail-Format-Prüfung (Rückkanal muss zustellbar sein).
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return {
+      status: 'error',
+      message: 'Bitte eine gültige E-Mail-Adresse angeben.',
     };
   }
 
   // TODO: Mailversand anbinden (z.B. Resend). Vorerst Konsolen-Log.
   console.log('[Kontaktanfrage Muster Werbetechnik]', {
     name,
+    email,
+    leistung,
     vehicle,
-    finish,
-    scope,
+    phone,
     message,
     receivedAt: new Date().toISOString(),
   });

@@ -110,9 +110,6 @@ export function Studio() {
         className="wrap relative z-10 flex flex-col items-center pb-44 pt-28 text-center sm:pb-48"
         style={{ transformPerspective: 1000 }}
       >
-        <motion.p variants={lineVariants} className="eyebrow">
-          Studio · Muster Werbetechnik · Münster
-        </motion.p>
         <motion.h2
           variants={lineVariants}
           className="mt-6 font-playfair text-[clamp(2.4rem,6vw,4.6rem)] font-medium leading-[1.08] text-paper"

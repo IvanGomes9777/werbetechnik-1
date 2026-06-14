@@ -32,6 +32,8 @@ export const site = {
     value: 5.0,
     count: 1,
     source: 'Google',
+    // BEISPIEL – Google-Bewertung-Button führt bewusst nirgendwohin (Demo).
+    reviewUrl: '#',
   },
   url: 'https://www.muster-werbetechnik.de',
   legal: {
@@ -51,8 +53,10 @@ export const reviews = [
 
 export const navLinks = [
   { label: 'Studio', href: '#studio' },
-  { label: 'Finishes', href: '#finishes' },
-  { label: 'Portfolio', href: '#portfolio' },
   { label: 'Leistungen', href: '#leistungen' },
+  { label: 'Ergebnisse', href: '#ergebnisse' },
+  { label: 'Portfolio', href: '#portfolio' },
+  { label: 'Standort', href: '#standort' },
+  { label: 'Bewertungen', href: '#rezension' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const;

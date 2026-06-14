@@ -1,8 +1,14 @@
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Studio } from '@/components/Studio';
-import { Finishes } from '@/components/Finishes';
+import { Showcase } from '@/components/Showcase';
 import { Leistungen } from '@/components/Leistungen';
+import { Portfolio } from '@/components/Portfolio';
+import { Standort } from '@/components/Standort';
+import { Rezension } from '@/components/Rezension';
+import { Kontakt } from '@/components/Kontakt';
+import { Footer } from '@/components/Footer';
+import { MobileContactBar } from '@/components/MobileContactBar';
 import { CoverPin } from '@/components/motion/CoverPin';
 
 export default function Home() {
@@ -22,15 +28,31 @@ export default function Home() {
         <Studio />
       </CoverPin>
       <CoverPin z={20}>
-        <Finishes />
-      </CoverPin>
-      <div className="relative z-30">
         <Leistungen />
+      </CoverPin>
+      <CoverPin z={30}>
+        <Showcase />
+      </CoverPin>
+      <CoverPin z={40}>
+        <Portfolio />
+      </CoverPin>
+      <CoverPin z={50}>
+        <Standort />
+      </CoverPin>
+      {/* Bewertung: bildschirmfüllend, gepinnt — Kontakt gleitet per Zoom-Through
+          darüber. */}
+      <CoverPin z={60}>
+        <Rezension />
+      </CoverPin>
+      <div className="relative z-[64]">
+        <Kontakt />
+        <Footer />
       </div>
+      <MobileContactBar />
       {/*
-        Gebaut: ✓ Hero · ✓ Studio · ✓ Finishes · ✓ Leistungen
-        Übergänge: Zoom-Through-Stack zwischen allen Sections
-        Nächste Sections: Portfolio · Ablauf · Rezension · Kontakt · Footer
+        Gebaut: ✓ Hero · ✓ Studio · ✓ Leistungen · ✓ Ergebnisse · ✓ Portfolio · ✓ Standort · ✓ Bewertung · ✓ Kontakt · ✓ Footer
+        Übergänge: Zoom-Through-Stack zwischen allen Sections.
+        (Ablauf bewusst weggelassen.)
       */}
     </>
   );
